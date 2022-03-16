@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-// import Login from '../pages/Login';
+import Login from '../Login/Login.jsx';
 import { Routes, Route, useNavigate } from "react-router-dom";
-// import NavBar from './NavBar';
-import {Container, Alert} from 'react-bootstrap';
+import NavBar from '../NavBar/NavBar.jsx';
+import { Container, Alert } from 'react-bootstrap' 
+import "./App.css"
 
 function App() {
   const [user, setUser] = useState(null);
@@ -10,7 +11,6 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // auto-login
     fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
@@ -26,7 +26,6 @@ function App() {
             setUser(null);
         }
     });
-    // Navigate to home page after logout and clear history
     navigate("/");
 }
 
@@ -35,14 +34,14 @@ function App() {
     <Container>
       <Alert className="mt-3" variant="primary" >Please Login OR Signup To Create A New Account</Alert>
     </Container>
-    {/* <Login onLogin={setUser}/> */}
+    <Login  onLogin={setUser}/>
     </>
   )
 
   return (
-    <div>
-    {/* <NavBar user={user} handleLogOutClick={handleLogOutClick} /> */}
-      // [Some routes ...]
+    <div className="App">
+      <NavBar user={user} handleLogOutClick={handleLogOutClick} />
+          // [Some routes ...]
     </div>
   );
 }
