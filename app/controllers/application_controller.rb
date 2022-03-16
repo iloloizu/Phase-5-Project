@@ -24,5 +24,4 @@ class ApplicationController < ActionController::API
     render json: { error: "#{error.model} not found" }, status: :not_found
   end
 
-
 end

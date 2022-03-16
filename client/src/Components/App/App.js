@@ -4,6 +4,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import NavBar from '../NavBar/NavBar.jsx';
 import { Container, Alert } from 'react-bootstrap' 
 import "./App.css"
+import Home from "../HomePage/Home.jsx";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -34,14 +35,16 @@ function App() {
     <Container>
       <Alert className="mt-3" variant="primary" >Please Login OR Signup To Create A New Account</Alert>
     </Container>
-    <Login  onLogin={setUser}/>
+    <Login onLogin={setUser}/>
     </>
   )
 
   return (
     <div className="App">
-      <NavBar user={user} handleLogOutClick={handleLogOutClick} />
-          // [Some routes ...]
+      <NavBar user={user} handleLogOutClick={handleLogOutClick}/>
+      <Routes> 
+        <Route exact path="/home" element={<Home/>} />
+      </Routes>
     </div>
   );
 }
