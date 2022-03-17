@@ -1,5 +1,7 @@
 class User < ApplicationRecord
     has_many :stores, dependent: :destroy
+    has_many :usr_snkrs
+    has_many :sneakers, through: :usr_snkrs
     
     has_secure_password
     

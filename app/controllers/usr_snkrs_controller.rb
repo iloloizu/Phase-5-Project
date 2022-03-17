@@ -1,0 +1,2 @@
+class UsrSnkrsController < ApplicationController
+end
