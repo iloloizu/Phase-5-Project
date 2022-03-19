@@ -5,11 +5,11 @@ import ShopCard from './ShopCard';
 export default function Shop() {
     const [shopItems, setShopItems] = useState([""])
 
-    useEffect(()=> {
-        fetch('http://localhost:3000/sneakers')
-            .then(r => r.json())
-            .then(data => console.log(data))
-    }, [])
+    // useEffect(()=> {
+    //     fetch('http://localhost:3000/sneakers')
+    //         .then(r => r.json())
+    //         .then(data => console.log(data))
+    // }, [])
 
         // console.log(shopItems)
         // const shopItemMap = shopItems?.map((item)=>{
