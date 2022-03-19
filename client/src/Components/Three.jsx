@@ -19,6 +19,7 @@ function Three() {
             <Box/>
             <ambientLight intensity={0.5}/>
             <directionalLight position={[-2,5,2]} intensity={1}/>
+            <OrbitControls/>
         </Canvas>
 
     hi
