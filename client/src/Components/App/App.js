@@ -11,7 +11,7 @@ import { fetchShoes } from "../Shoe Page/Shoes.jsx";
 
 //Pages
 import Home from "../HomePage/Home.jsx";
-import Shoes from "../Shoe Page/Shoes.jsx";
+import Shoes from "../Shoe Page/shoePage.jsx";
 import Shop from "../Shop/Shop.jsx"
 import Profile from "../Profile Page/Profile";
 
