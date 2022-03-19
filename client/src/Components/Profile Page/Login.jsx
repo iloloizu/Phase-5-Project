@@ -20,7 +20,7 @@ function Login() {
           dispatch(logout());
         }}
       >
-        LOGOUT
+        Logout
       </button>
     </div>
   );
