@@ -15,6 +15,7 @@ import Shoes from "../Shoe Page/shoePage.jsx";
 import Shop from "../Shop/Shop.jsx"
 import Profile from "../Profile Page/Profile";
 import NewsPage from "../NewsPage/NewsPage";
+import Three from "../Three";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -54,18 +55,19 @@ function App() {
     <Login onLogin={setUser}/>
     </>
   )
-
+    
   return (
     <div className="App">
       <NavBar user={user} handleLogOutClick={handleLogOutClick}/>
-      <Routes> 
-        <Route exact path="/home" element={<Home/>} />
-        <Route exact path="/shoes" element={<Shoes/>} />
-        <Route exact path="/shop" element={<Shop/>} />
-        <Route exact path="/profile" element={<Profile/>} />
-        <Route exact path="/news" element={<NewsPage/>} />
-
-      </Routes>
+        <Routes> 
+          <Route exact path="/home" element={<Home/>} />
+          <Route exact path="/shoes" element={<Shoes/>} />
+          <Route exact path="/shop" element={<Shop/>} />
+          <Route exact path="/profile" element={<Profile/>} />
+          <Route exact path="/news" element={<NewsPage/>} />
+          <Route exact path="/three" element={<Three/>} />
+        </Routes>
+      
     </div>
   );
 }

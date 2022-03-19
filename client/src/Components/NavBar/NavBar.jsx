@@ -36,6 +36,11 @@ export default function NavBar() {
                     Profile
                 </NavLink>
             </li>
+             <li>
+                <NavLink className="li-nav" to="/three" exact>
+                    Space Station
+                </NavLink>
+            </li>
         </ul>
     </nav>
   )}

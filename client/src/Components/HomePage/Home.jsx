@@ -10,6 +10,7 @@ export default function Home() {
       Welcome user.username! 👋🏾 
       <Profile/>
       <Login/>
+    
       </div>
   )
 }
