@@ -1,3 +1,14 @@
 .App {
   background-color: #bdbec2;
 }
+
+#div_top_hypers {
+  background-color: #eeeeee;
+  display: inline;
+}
+
+#ul_top_hypers li {
+  display: inline;
+  padding: 20px;
+  text-decoration: none;
+}

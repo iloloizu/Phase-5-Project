@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { useState, useEffect } from 'react';
 
-export default function ShopCard(item) {
+function ShopCard(item) {
     console.log(item)
   return (
     <div>ShopCard</div>
   )
 }
+
+export default ShopCard;

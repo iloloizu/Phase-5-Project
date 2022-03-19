@@ -3,10 +3,11 @@ import React from 'react'
 import Profile from '../Profile Page/Profile'
 import Login from '../Profile Page/Login'
 
+
 export default function Home() {
   return (
     <div>
-      Welcome Home
+      Welcome user.username! 👋🏾 
       <Profile/>
       <Login/>
       </div>
