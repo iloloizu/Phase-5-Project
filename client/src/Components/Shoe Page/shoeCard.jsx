@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 function shoeCard() {
-  const sneakerData = useSelector((state) => [...state]);
+//   const sneakerData = useSelector((state) => [...state]);
 
   console.log(sneakerData)
 

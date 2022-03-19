@@ -14,6 +14,7 @@ import Home from "../HomePage/Home.jsx";
 import Shoes from "../Shoe Page/shoePage.jsx";
 import Shop from "../Shop/Shop.jsx"
 import Profile from "../Profile Page/Profile";
+import NewsPage from "../NewsPage/NewsPage";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -62,7 +63,7 @@ function App() {
         <Route exact path="/shoes" element={<Shoes/>} />
         <Route exact path="/shop" element={<Shop/>} />
         <Route exact path="/profile" element={<Profile/>} />
-
+        <Route exact path="/news" element={<NewsPage/>} />
 
       </Routes>
     </div>

@@ -22,7 +22,7 @@ export default function NavBar() {
                 </NavLink>
             </li>
              <li>
-                <NavLink className="li-nav" to="/home" exact>
+                <NavLink className="li-nav" to="/news" exact>
                     Sneaker News
                 </NavLink>
             </li>
