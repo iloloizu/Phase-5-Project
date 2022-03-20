@@ -1,28 +1,23 @@
 import React from 'react'
+import "../index.css"
 
 //three.js
 import * as THREE from 'three';
 import {Canvas} from "@react-three/fiber"
-import Box from './ThreeJS Components/Box';
+import Jordan from "./ThreeJS Components/Jordan.js"
 import { OrbitControls } from "@react-three/drei"
 
 function Three() {
 
-    const canvas = document.getElementById("c");
-    document.addEventListener("DOMContentLoaded", () => {
-      canvas.style.opacity = 1;
-    });
-
   return (
-    <div>
-        <Canvas className='canvas' id='c'>
-            <Box/>
+    <div className='shoe-box'>
+        <Canvas className='canvas' >
+            <Jordan/>
             <ambientLight intensity={0.5}/>
             <directionalLight position={[-2,5,2]} intensity={1}/>
-            <OrbitControls/>
+            <OrbitControls enableZoom={false} />
         </Canvas>
 
-    hi
     </div>
   )
 }

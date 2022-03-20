@@ -1,3 +1,12 @@
 .App {
   background-color: #bdbec2;
 }
+
+.canvas {
+  height: 100%;
+}
+
+.shoe-box {
+  background-image: linear-gradient(navy, cyan);
+  height: 500px;
+}
