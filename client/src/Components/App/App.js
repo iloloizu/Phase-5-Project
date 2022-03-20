@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useDispatch,
-  //  useSelector
+   useSelector
    } from "react-redux";
 import "./App.css"
 
 //components
 import Login from '../Login/Login.jsx';
 import NavBar from '../NavBar/NavBar.jsx';
-import { Container, Alert } from 'react-bootstrap' 
+import { Container, Alert, Button } from 'react-bootstrap' 
 import { fetchShoes } from "../Shoe Page/Shoes.jsx";
 
 //Pages
@@ -20,6 +20,8 @@ import NewsPage from "../NewsPage/NewsPage";
 import Three from "../Three";
 
 function App() {
+  const [userData, setUserData] = useState("");
+
   const [user, setUser] = useState(null);
 
   const navigate = useNavigate()
@@ -37,6 +39,14 @@ function App() {
       }
     });
   }, []);
+
+  useEffect(() => {
+    fetch('/users/1')
+        .then(r => r.json())
+        .then(data => setUserData(data))
+    }, [])
+
+  const colorUser = useSelector((state) => userData)
 
   function handleLogOutClick(){
     fetch("/logout",{
@@ -59,7 +69,7 @@ function App() {
   )
     
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor: `${colorUser.color1}`}}>
       <NavBar user={user} handleLogOutClick={handleLogOutClick}/>
         <Routes> 
           <Route exact path="/home" element={<Home/>} />
