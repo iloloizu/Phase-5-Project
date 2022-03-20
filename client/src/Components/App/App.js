@@ -13,7 +13,7 @@ import { fetchShoes } from "../Shoe Page/Shoes.jsx";
 
 //Pages
 import Home from "../HomePage/Home.jsx";
-import ShoePage from "../Shoe Page/ShoePage.jsx";
+import ShoePage from "../Shoe Page/shoePage";
 import Shop from "../Shop/Shop.jsx"
 import Profile from "../Profile Page/Profile";
 import NewsPage from "../NewsPage/NewsPage";
