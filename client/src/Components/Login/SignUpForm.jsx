@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Container, Form, Button, Alert } from 'react-bootstrap'
+import { Container, Form, Button, Alert, Dropdown, Row, Col } from 'react-bootstrap'
+
 
 function SignUpForm({onLogin}){
     const [email, setEmail] = useState("");
@@ -8,6 +9,9 @@ function SignUpForm({onLogin}){
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [address, setAddress] = useState("");
     const [phone, setPhone] = useState("");
+    const [color1, setColor1] = useState("");
+    const [color2, setColor2] = useState("");
+    const [size, setShoeSize] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -24,7 +28,10 @@ function SignUpForm({onLogin}){
                 password,
                 password_confirmation: passwordConfirmation,
                 address,
-                phone
+                phone,
+                color1,
+                color2,
+                size,
             })
         }).then((r) => {
             setIsLoading(false);
@@ -106,6 +113,74 @@ function SignUpForm({onLogin}){
                         onChange={(e) => setPhone(e.target.value)}
                     />
                 </Form.Group>
+                <Row className="justify-content-md-center">
+                    <Col>
+                        <Form.Group className="mb-3">
+                            <Form.Label htmlFor="exampleColorInput">Primary Site Color</Form.Label>
+                            <Form.Control
+                                type="color"
+                                id="exampleColorInput"
+                                defaultValue="#563d7c"
+                                title="Choose your color"
+                                autoComplete="off" 
+                                value={color1}
+                                onChange={(e) => setColor1(e.target.value)}
+                            />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group className="mb-3">
+                            <Form.Label htmlFor="exampleColorInput">Secondary Site Color </Form.Label>
+                            <Form.Control
+                                type="color"
+                                id="exampleColorInput"
+                                defaultValue="#563d7c"
+                                title="Choose your color"
+                                autoComplete="off" 
+                                value={color2}
+                                onChange={(e) => setColor2(e.target.value)}
+                            />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                    <br/>
+                        <Dropdown>
+                            <Dropdown.Toggle variant="dark" id="dropdown-basic">
+                                Shoe Size
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>4.5W </Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>5W </Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>5.5W </Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>6W</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>6.5W</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>7W</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>7.5W</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>8W</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>8.5W</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>7.5M / 9W </Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>8M   / 9.5W</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>8.5M / 10W</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>9M   / 10.5W</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>9.5M / 11W</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>10M / 11.5W</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>10.5M / 12W</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>11M</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>11.5M</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>12M</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>12.5M</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>13M</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>13.5M</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>14M</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>15M</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>16M</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>17M</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setShoeSize(e.target.value)}>18M</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </Col>
+                </Row>
+                <br/>
                 <Button variant="dark" type="submit">{isLoading ? "Loading..." : "Login"}</Button>
                 {errors.map(error => (
                     <Alert className="mt-3" variant="danger" key={error}>{error}</Alert>

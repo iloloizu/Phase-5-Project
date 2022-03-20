@@ -15,7 +15,6 @@ function Login({ onLogin }){
             <Row className="justify-content-md-center">
                 <Col>
                     <Figure>
-                       
                         <Figure.Image width={600} alt="Sneaker Vault" src={LoginImage} />
                     </Figure>
                 </Col>

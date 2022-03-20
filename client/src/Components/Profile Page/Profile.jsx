@@ -13,11 +13,11 @@ function Profile() {
         }, [])
 
     const user = useSelector((state) => userData)
-        // (state) => state.user.value);
+    console.log(userData)
 
     return (
         <Container>
-            <h1>Welcome back, {user.username}! 👋🏾</h1>
+            <h1>Welcome back, {user.username}.</h1>
             <p> Shoe Size: {user.size}</p>
             <p> Email: {user.email}</p>  
             <p> Phone: {user.phone}</p>  
