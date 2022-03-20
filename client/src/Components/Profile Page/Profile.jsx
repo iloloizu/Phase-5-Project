@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import {useEffect, useState} from "react";
-import { Container, Button } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 function Profile() {
     const [userData, setUserData] = useState("");

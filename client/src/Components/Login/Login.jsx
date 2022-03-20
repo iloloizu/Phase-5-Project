@@ -3,7 +3,6 @@ import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 import ResetPasswordForm from './ResetPasswordForm';
 import {Container, Button, Figure, Row, Col} from 'react-bootstrap';
-import Three from "../Three";
 
 const LoginImage = "https://wallpapercave.com/wp/wp4316804.jpg"
 
@@ -16,8 +15,8 @@ function Login({ onLogin }){
             <Row className="justify-content-md-center">
                 <Col>
                     <Figure>
-                        <Three/>
-                        {/* <Figure.Image width={600} alt="Sneaker Vault" src={LoginImage} /> */}
+                       
+                        <Figure.Image width={600} alt="Sneaker Vault" src={LoginImage} />
                     </Figure>
                 </Col>
                 <Col>

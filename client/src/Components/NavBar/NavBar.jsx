@@ -1,46 +1,37 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import {LinkContainer} from 'react-router-bootstrap'
+import {Navbar, Nav} from 'react-bootstrap'
 
 export default function NavBar() {
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="div_top_hypers">
-      <a class="navbar-brand" href="/home">Space City Sneakers</a>
-        <ul id="ul_top_hypers">
-             <li>
-                <NavLink className="li-nav" to="/home" exact>
-                    Home
-                </NavLink>
-            </li>
-             <li>
-                <NavLink className="li-nav" to="/shop" exact>
-                    Buy Shoes
-                </NavLink>
-            </li>
-             <li>
-                <NavLink className="li-nav" to="/shoes" exact>
-                    Look at Shoes
-                </NavLink>
-            </li>
-             <li>
-                <NavLink className="li-nav" to="/news" exact>
-                    Sneaker News
-                </NavLink>
-            </li>
-             <li>
-                <NavLink className="li-nav" to="/home" exact>
-                    My Vault
-                </NavLink>
-            </li>
-             <li>
-                <NavLink className="li-nav" to="/profile" exact>
-                    Profile
-                </NavLink>
-            </li>
-             <li>
-                <NavLink className="li-nav" to="/three" exact>
-                    Space Station
-                </NavLink>
-            </li>
-        </ul>
+                    <Navbar bg="dark" expand="lg">
+                        <LinkContainer to="/home">
+                            <Navbar.Brand> Space City Sneakers</Navbar.Brand>
+                        </LinkContainer>
+                            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                            <Navbar.Collapse id="basic-navbar-nav">
+                                <Nav className="mr-auto">
+                                    <LinkContainer to="/shop">
+                                        <Nav.Link>Shop</Nav.Link>
+                                    </LinkContainer>
+                                    <LinkContainer to="/shoes">
+                                        <Nav.Link>Shoes</Nav.Link>
+                                    </LinkContainer>
+                                    <LinkContainer to="/news">
+                                        <Nav.Link>News</Nav.Link>
+                                    </LinkContainer>
+                                    <LinkContainer to="/home">
+                                        <Nav.Link>My Vault</Nav.Link>
+                                    </LinkContainer>
+                                    <LinkContainer to="/profile">
+                                        <Nav.Link>Profile</Nav.Link>
+                                    </LinkContainer>
+                                    <LinkContainer to="/three">
+                                        <Nav.Link>Space Station</Nav.Link>
+                                    </LinkContainer>
+                                </Nav>
+                            </Navbar.Collapse>
+            </Navbar>
     </nav>
   )}

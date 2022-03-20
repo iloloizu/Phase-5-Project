@@ -1,9 +1,22 @@
-import React from 'react'
+import React, {useEffect,
+     useState
+    } from 'react';
 
-function shoePage() {
+function ShoePage() {
+  
+  // const [shoeData, setShoeData] = useState([''])
+
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/sneakers/1')
+  //     .then(r => r.json())
+  //     .then(data => setShoeData(data))
+  // }, [])  
+
+  // console.log(shoeData)
+
   return (
-    <div>shoePage</div>
+    <div>shoe Page</div>
   )
 }
 
-export default shoePage
+export default ShoePage;

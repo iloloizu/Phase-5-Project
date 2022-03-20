@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch,
+  //  useSelector
+   } from "react-redux";
 import "./App.css"
 
 //components
@@ -11,7 +13,7 @@ import { fetchShoes } from "../Shoe Page/Shoes.jsx";
 
 //Pages
 import Home from "../HomePage/Home.jsx";
-import Shoes from "../Shoe Page/shoePage.jsx";
+import ShoePage from "../Shoe Page/ShoePage.jsx";
 import Shop from "../Shop/Shop.jsx"
 import Profile from "../Profile Page/Profile";
 import NewsPage from "../NewsPage/NewsPage";
@@ -61,11 +63,12 @@ function App() {
       <NavBar user={user} handleLogOutClick={handleLogOutClick}/>
         <Routes> 
           <Route exact path="/home" element={<Home/>} />
-          <Route exact path="/shoes" element={<Shoes/>} />
+          <Route exact path="/shoes" element={<ShoePage/>} />
           <Route exact path="/shop" element={<Shop/>} />
           <Route exact path="/profile" element={<Profile/>} />
           <Route exact path="/news" element={<NewsPage/>} />
           <Route exact path="/three" element={<Three/>} />
+          <Route exact path="/" element={<Home/>} />
         </Routes>
       
     </div>

@@ -1,5 +1,6 @@
 .App {
   background-color: #bdbec2;
+  /* background-image: linear-gradient(navy, cyan); */
 }
 
 .canvas {
@@ -8,5 +9,25 @@
 
 .shoe-box {
   background-image: linear-gradient(navy, cyan);
-  height: 500px;
+  /* background-image: url("https://images.wallpapersden.com/image/download/astronaut-lost-in-space_bGtua2eUmZqaraWkpJRobWllrWdma2U.jpg"); */
+  height: 800px;
+  padding-top: 100px;
+  width: 100%;
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+  border-radius: 1.2rem;
+}
+
+.shoe-container {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  float: center;
+  margin: 0 2.5rem;
+  box-shadow: 0 35px 20px -30px rgba(0, 0, 0, 0.1);
+  border-radius: 1.2rem;
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
 }

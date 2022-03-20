@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
-function shoeCard() {
+function ShoeCard() {
 //   const sneakerData = useSelector((state) => [...state]);
 
-  console.log(sneakerData)
+  // console.log(sneakerData)
 
   return (
     <>
@@ -14,4 +14,4 @@ function shoeCard() {
   );
 }
 
-export default shoeCard;
+export default ShoeCard;
