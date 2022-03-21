@@ -7,7 +7,6 @@ import Login from '../Profile Page/Login'
 export default function Home() {
   return (
     <div>
-      Welcome user.username! 👋🏾 
       <Profile/>
       <Login/>
     

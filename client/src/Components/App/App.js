@@ -9,7 +9,7 @@ import "./App.css"
 import Login from '../Login/Login.jsx';
 import NavBar from '../NavBar/NavBar.jsx';
 import { Container, Alert, Button } from 'react-bootstrap' 
-import { fetchShoes } from "../Shoe Page/Shoes.jsx";
+import { fetchSneakers } from "../../features/shoe";
 
 //Pages
 import Home from "../HomePage/Home.jsx";
@@ -29,7 +29,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchShoes());
+    dispatch(fetchSneakers());
   }, [dispatch]);
 
   useEffect(() => {
@@ -47,6 +47,9 @@ function App() {
     }, [])
 
   const colorUser = useSelector((state) => userData)
+  const shoeData = useSelector((state) => state.shoes)
+
+  console.log(shoeData)
 
   function handleLogOutClick(){
     fetch("/logout",{

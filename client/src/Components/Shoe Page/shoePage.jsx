@@ -1,9 +1,14 @@
 import React, {useEffect,
      useState
     } from 'react';
+import { useDispatch, useSelector} from "react-redux";
 
 function ShoePage() {
   
+  const fetchFromStore = useSelector((state) => state.sneakers.entities)
+
+  console.log(fetchFromStore)
+  console.log("hi")
   // const [shoeData, setShoeData] = useState([''])
 
   // useEffect(() => {

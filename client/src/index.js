@@ -7,14 +7,18 @@ import {BrowserRouter} from 'react-router-dom'
 // import { store } from './app/store'
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit';
+import { createStore, applyMiddleware } from "redux";
 import userReducer from "./features/user";
+import sneakersReducer from "./features/shoe";
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const store = configureStore({
   reducer: {
-    user: userReducer,
+    // user: userReducer,
+    sneakers: sneakersReducer
   },
 
 })
