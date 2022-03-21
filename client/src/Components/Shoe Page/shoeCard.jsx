@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import { Card, Button } from 'react-bootstrap'
 
-function ShoeCard({fetchFromStore}) {
+function ShoeCard({colorway, name, description, price, link, image}) {
 //   const sneakerData = useSelector((state) => [...state]);
 
-  // console.log(sneakerData)
+  // console.log(fetchFromStore)
 
   return (
     <>
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={`${fetchFromStore.image}`} />
+        <Card.Img variant="top" src={`${image}`} />
         <Card.Body>
-          <Card.Title>{fetchFromStore[0].colorway}</Card.Title>
-          <Card.Subtitle>{fetchFromStore[0].name}</Card.Subtitle>
+          <Card.Title>{colorway}</Card.Title>
+          <Card.Subtitle>{name}</Card.Subtitle>
           <Card.Text>
-           {fetchFromStore[0].description}
+           {description}
           </Card.Text>
-           <Button variant="dark" href={fetchFromStore[0].link}>
+           <Button variant="dark" href={link}>
              
-             {"Purchase Here for $"}{fetchFromStore[0].price} </Button>
+             {"Purchase Here for $"}{price} </Button>
           {/* <Button variant="primary">Go somewhere</Button> */}
         </Card.Body>
       </Card>

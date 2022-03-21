@@ -12,15 +12,15 @@ function ShoePage() {
   const shoeCards = fetchFromStore.map((shoe)=>
   
   <ShoeCard
-    // key = {shoe.id}
-    // id = {shoe.id}
-    // name={shoe.name}
-    // colorway={shoe.colorway}
-    // description={shoe.description}
-    // image={shoe.image}
-    // link={shoe.link}
-    // price={shoe.price}
-    fetchFromStore={fetchFromStore}
+    key = {shoe.id}
+    id = {shoe.id}
+    name={shoe.name}
+    colorway={shoe.colorway}
+    description={shoe.description}
+    image={shoe.image}
+    link={shoe.link}
+    price={shoe.price}
+    // fetchFromStore={fetchFromStore}
   /> )
 
   return (
