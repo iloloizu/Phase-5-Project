@@ -17,7 +17,6 @@ function ShoeCard({colorway, name, description, price, link, image}) {
            {description}
           </Card.Text>
            <Button variant="dark" href={link}>
-             
              {"Purchase Here for $"}{price} </Button>
           {/* <Button variant="primary">Go somewhere</Button> */}
         </Card.Body>
