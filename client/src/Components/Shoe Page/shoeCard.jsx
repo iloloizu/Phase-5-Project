@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Card, Button, ListGroup, Dropdown, Modal } from 'react-bootstrap'
 import EditForm from "./EditForm";
+import stockX from "./StockX_logo_white.png"
 
 function ShoeCard({colorway, name, description, price, link, image, brand}) {
 //   const sneakerData = useSelector((state) => [...state]);
@@ -10,7 +11,6 @@ function ShoeCard({colorway, name, description, price, link, image, brand}) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
 
   return (
     <>
@@ -23,7 +23,9 @@ function ShoeCard({colorway, name, description, price, link, image, brand}) {
            {description}
           </Card.Text>
           <Button variant="dark" href={link}>
-             {"Purchase for $"}{price} </Button><br/><br/>
+             {"Purchase for $"}{price}
+             {/* {` from ${stockX}`}  */}
+             </Button><br/><br/>
           <Button variant="dark" href={link}>
              {"Purchase from Space City Sneakers"} </Button>
             <br/>
@@ -62,16 +64,14 @@ function ShoeCard({colorway, name, description, price, link, image, brand}) {
           link={link}
           image={image}
           brand={brand}
+          handleClose={handleClose}
           />
         </Modal.Body>
-        <Modal.Footer>
+        {/* <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </>
   );

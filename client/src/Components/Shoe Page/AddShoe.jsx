@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Card } from 'react-bootstrap'
+import { Form, Card, Button } from 'react-bootstrap'
 
 function AddShoe() {
   return (
@@ -42,6 +42,9 @@ function AddShoe() {
                     <Form.Label>Description</Form.Label>
                     <Form.Control type="text" placeholder='ex. "Jordan Brand reintroduced the "OG" versions of..."' />
                 </Form.Group>
+                <Button variant="success" type="submit">
+                    Submit
+                </Button>
             </Form>
             </div>
         </Card>

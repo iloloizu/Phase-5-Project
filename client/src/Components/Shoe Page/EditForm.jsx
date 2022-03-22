@@ -1,7 +1,7 @@
 import React from 'react'
-import { Form } from 'react-bootstrap'
+import { Form, Button, InputGroup } from 'react-bootstrap'
 
-function EditForm({colorway, name, description, price, link, image, brand}) {
+function EditForm({handleClose, colorway, name, description, price, link, image, brand}) {
   return (
     <div>
         <Form>
@@ -22,7 +22,10 @@ function EditForm({colorway, name, description, price, link, image, brand}) {
 
             <Form.Group className="mb-3" controlId={"formBasicPassword"}>
                 <Form.Label>Price</Form.Label>
-                <Form.Control type="number" placeholder={price} />
+                <InputGroup className="mb-3">
+                    <InputGroup.Text>$</InputGroup.Text>
+                    <Form.Control type="number" placeholder={price} />
+                </InputGroup>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -39,6 +42,13 @@ function EditForm({colorway, name, description, price, link, image, brand}) {
                 <Form.Label>Description</Form.Label>
                 <Form.Control type="text" placeholder={description} />
             </Form.Group>
+
+            <Button className="right-button" variant="success" type="submit">
+                    Submit
+            </Button><br/><br/>
+            <Button className="right-button" variant="secondary" onClick={handleClose}>
+                    Close
+            </Button>
         </Form>
     </div>
 )

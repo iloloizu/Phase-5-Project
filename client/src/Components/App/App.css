@@ -61,3 +61,7 @@
 .form-title {
   text-align: center;
 }
+
+.right-button {
+  float: right;
+}

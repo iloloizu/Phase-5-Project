@@ -17,10 +17,9 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const store = configureStore({
   reducer: {
-    // user: userReducer,
+    user: userReducer,
     sneakers: sneakersReducer
   },
-
 })
 
 ReactDOM.render(
