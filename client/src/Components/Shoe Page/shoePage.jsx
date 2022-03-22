@@ -2,7 +2,7 @@ import React, {useEffect,
      useState
     } from 'react';
 import { useDispatch, useSelector} from "react-redux";
-import { Card, Button } from 'react-bootstrap'
+import { Container, Card, Button } from 'react-bootstrap'
 import ShoeCard from './shoeCard';
 
 function ShoePage() {
@@ -24,9 +24,14 @@ function ShoePage() {
   /> )
 
   return (
-    <div>
-      {shoeCards}
-    </div>
+    <>
+    <Container>
+      <div className='card-holder' >
+        {shoeCards}
+      </div>
+
+    </Container>
+    </>
   )
 }
 

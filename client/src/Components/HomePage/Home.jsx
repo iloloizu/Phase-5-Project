@@ -7,7 +7,7 @@ import { Timeline } from 'react-twitter-widgets'
 
 export default function Home() {
   return (
-    <div>
+    <div className="home">
       <Profile/>
       <Login/>
       <Timeline

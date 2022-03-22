@@ -8,8 +8,8 @@ function ShoeCard({colorway, name, description, price, link, image}) {
 
   return (
     <>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={`${image}`} />
+      <Card style={{ width: '25rem' }}>
+        <Card.Img variant="left" src={`${image}`} />
         <Card.Body>
           <Card.Title>{colorway}</Card.Title>
           <Card.Subtitle>{name}</Card.Subtitle>

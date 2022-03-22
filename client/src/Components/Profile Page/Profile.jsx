@@ -17,12 +17,14 @@ function Profile() {
 
     return (
         <Container>
-            <h1>Welcome back, {user.username}.</h1>
-            <p> Shoe Size: {user.size}</p>
-            <p> Email: {user.email}</p>  
-            <p> Phone: {user.phone}</p>  
-            <p> Primary Color: {user.color1}</p>  
-            <p> Secondary Color: {user.color2}</p>  
+            <div className="profile">
+                <h1>Welcome back, {user.username}.</h1>
+                <p> Shoe Size: {user.size}</p>
+                <p> Email: {user.email}</p>  
+                <p> Phone: {user.phone}</p>  
+                <p> Primary Color: {user.color1}</p>  
+                <p> Secondary Color: {user.color2}</p>  
+            </div>
         </Container>
     );
 }
