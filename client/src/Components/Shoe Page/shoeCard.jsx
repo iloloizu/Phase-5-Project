@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Card, Button, ListGroup, Dropdown, Modal } from 'react-bootstrap'
 import EditForm from "./EditForm";
 
-function ShoeCard({colorway, name, description, price, link, image}) {
+function ShoeCard({colorway, name, description, price, link, image, brand}) {
 //   const sneakerData = useSelector((state) => [...state]);
 
   // console.log(fetchFromStore)
@@ -61,6 +61,7 @@ function ShoeCard({colorway, name, description, price, link, image}) {
           price={price}
           link={link}
           image={image}
+          brand={brand}
           />
         </Modal.Body>
         <Modal.Footer>

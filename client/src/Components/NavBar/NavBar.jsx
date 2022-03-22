@@ -15,9 +15,6 @@ export default function NavBar() {
                                     <LinkContainer to="/shop">
                                         <Nav.Link>Shop</Nav.Link>
                                     </LinkContainer>
-                                    <LinkContainer to="/shoes">
-                                        <Nav.Link>Shoes</Nav.Link>
-                                    </LinkContainer>
                                     <LinkContainer to="/news">
                                         <Nav.Link>News</Nav.Link>
                                     </LinkContainer>
@@ -26,6 +23,9 @@ export default function NavBar() {
                                     </LinkContainer>
                                     <LinkContainer to="/profile">
                                         <Nav.Link>Profile</Nav.Link>
+                                    </LinkContainer>
+                                    <LinkContainer to="/shoes">
+                                        <Nav.Link>Warehouse</Nav.Link>
                                     </LinkContainer>
                                     <LinkContainer to="/three">
                                         <Nav.Link>Space Station</Nav.Link>

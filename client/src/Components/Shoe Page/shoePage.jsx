@@ -5,6 +5,7 @@ import { useDispatch, useSelector} from "react-redux";
 import { Container, Card, Button } from 'react-bootstrap'
 import ShoeCard from './shoeCard';
 import Category from "./Category";
+import AddShoe from './AddShoe';
 
 function ShoePage() {
   const fetchFromStore = useSelector((state) => state.sneakers.entities)
@@ -46,6 +47,7 @@ function ShoePage() {
        <Category filter={filter} category={category} />
         <div className='card-holder' >
           {shoeCards}
+          <AddShoe/>
         </div>
       </Container>
     </>

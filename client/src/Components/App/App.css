@@ -53,3 +53,11 @@
   background-image: url("https://3.bp.blogspot.com/-4vf9OVikxC8/XFUltIbso7I/AAAAAAAABz0/JVXPiIhLnbA3tfwA29H1pqJlbXvX39fEwCKgBGAs/w2880-h1800-c/snow-mountainer-night-sky-stars-scenery-31-4K.jpg");
   background-size: cover;
 }
+
+.form-card {
+  padding: 25px;
+}
+
+.form-title {
+  text-align: center;
+}
