@@ -31,6 +31,6 @@ class SneakersController < ApplicationController
     private
 
     def sneaker_params
-        params.permit(:name, :colorway, :description, :price, :image, :link)
+        params.permit(:name, :colorway, :description, :price, :image, :link, :brand)
     end
 end

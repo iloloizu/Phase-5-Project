@@ -4,12 +4,28 @@ import React, {useEffect,
 import { useDispatch, useSelector} from "react-redux";
 import { Container, Card, Button } from 'react-bootstrap'
 import ShoeCard from './shoeCard';
+import Category from "./Category";
 
 function ShoePage() {
-  
   const fetchFromStore = useSelector((state) => state.sneakers.entities)
 
-  const shoeCards = fetchFromStore.map((shoe)=>
+  const allShoes = ['All', ...new Set(fetchFromStore.map(shoe => shoe.brand))];
+  
+  const [category, setCategory] = useState(allShoes);
+  const [menuItems, setMenuItems] = useState(fetchFromStore);
+
+  const filter = (category) =>{
+      if(category === 'All'){
+          setMenuItems(fetchFromStore)
+          return;
+      }
+      const filteredData  = fetchFromStore.filter((item)=>{
+          return item.brand === category;
+      })
+      setMenuItems(filteredData);
+  }
+  // console.log(fetchFromStore[1].name)
+  const shoeCards = menuItems.map((shoe)=>
   
   <ShoeCard
     key = {shoe.id}
@@ -20,17 +36,18 @@ function ShoePage() {
     image={shoe.image}
     link={shoe.link}
     price={shoe.price}
+    brand={shoe.brand}
     // fetchFromStore={fetchFromStore}
   /> )
 
   return (
     <>
-    <Container>
-      <div className='card-holder' >
-        {shoeCards}
-      </div>
-
-    </Container>
+      <Container>
+       <Category filter={filter} category={category} />
+        <div className='card-holder' >
+          {shoeCards}
+        </div>
+      </Container>
     </>
   )
 }

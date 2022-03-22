@@ -31,3 +31,19 @@
   align-content: flex-start;
   justify-content: center;
 }
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.1rem;
+  margin: 4rem 10rem;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 1270px) {
+    margin: 2rem 5rem;
+  }
+  @media screen and (max-width: 1100px) {
+    margin: 2rem 2rem;
+  }
+}

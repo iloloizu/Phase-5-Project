@@ -18,6 +18,16 @@
   display: grid;
   grid-template-columns: repeat(3, 0.11fr);
   grid-gap: 1rem;
+
+  @media screen and (max-width: 1270px) {
+    margin: 2rem 5rem;
+    grid-template-columns: repeat(1, 0.11fr);
+  }
+
+  @media screen and (max-width: 1100px) {
+    margin: 2rem 2rem;
+    grid-template-columns: repeat(1, 0.11fr);
+  }
 }
 
 .profile {
