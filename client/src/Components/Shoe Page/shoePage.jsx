@@ -24,7 +24,7 @@ function ShoePage() {
       })
       setMenuItems(filteredData);
   }
-  // console.log(fetchFromStore[1].name)
+  
   const shoeCards = menuItems.map((shoe)=>
   
   <ShoeCard
