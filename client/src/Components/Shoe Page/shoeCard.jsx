@@ -3,6 +3,9 @@ import { Card, Button, ListGroup, Dropdown, Modal } from 'react-bootstrap'
 import EditForm from "./EditForm";
 import stockX from "./StockX_logo_white.png"
 
+import { useDispatch } from "react-redux";
+import { createSneakers } from "../../features/shoe"
+
 function ShoeCard({colorway, name, description, price, link, image, brand}) {
 //   const sneakerData = useSelector((state) => [...state]);
 
@@ -11,6 +14,23 @@ function ShoeCard({colorway, name, description, price, link, image, brand}) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const dispatch = useDispatch();
+
+  function onSubmit(event) {
+    event.preventDefault();
+      dispatch(
+        createSneakers({
+          colorway: {colorway},
+          name: {name},
+          description: {description},
+          price: {price},
+          link: {link},
+          image: {image},
+          brand: {brand},
+        })
+      );
+  }
 
   return (
     <>
@@ -65,6 +85,7 @@ function ShoeCard({colorway, name, description, price, link, image, brand}) {
           image={image}
           brand={brand}
           handleClose={handleClose}
+          onSubmit={onSubmit}
           />
         </Modal.Body>
         {/* <Modal.Footer>

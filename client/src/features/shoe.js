@@ -7,6 +7,19 @@ export const fetchSneakers = createAsyncThunk("sneakers/fetchSneakers", () => {
     .then((data) => data);
 });
 
+export const createSneakers = createAsyncThunk(
+  "sneakers/createSneakers",
+  async (newSneakers) => {
+    return fetch(`/sneakers`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newSneakers),
+    }).then((res) => res.json());
+  }
+);
+
 const sneakersSlice = createSlice({
   name: "sneakers",
   initialState: {
@@ -31,6 +44,9 @@ const sneakersSlice = createSlice({
     [fetchSneakers.fulfilled](state, action) {
       state.entities = action.payload;
       state.status = "idle";
+    },
+    [createSneakers.fulfilled](state, action) {
+      state.entities = [...state.entities, action.payload];
     },
   },
 });
