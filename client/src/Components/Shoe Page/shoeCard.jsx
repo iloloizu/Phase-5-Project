@@ -23,7 +23,9 @@ function ShoeCard({colorway, name, description, price, link, image}) {
            {description}
           </Card.Text>
           <Button variant="dark" href={link}>
-             {"Purchase for $"}{price} </Button>
+             {"Purchase for $"}{price} </Button><br/><br/>
+          <Button variant="dark" href={link}>
+             {"Purchase from Space City Sneakers"} </Button>
             <br/>
             <br/>
           <Dropdown>
@@ -44,12 +46,22 @@ function ShoeCard({colorway, name, description, price, link, image}) {
         </Card.Body>
       </Card>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal 
+      show={show}
+      onHide={handleClose}
+      >
         <Modal.Header closeButton>
           <Modal.Title>Edit a Sneaker Card</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <EditForm/>
+          <EditForm
+          colorway={colorway}
+          name={name}
+          description={description}
+          price={price}
+          link={link}
+          image={image}
+          />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
