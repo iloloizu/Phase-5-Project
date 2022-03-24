@@ -8,9 +8,9 @@
 }
 
 .shoe-box {
-  background-image: linear-gradient(navy, cyan);
-  /* background-image: url("https://images.wallpapersden.com/image/download/astronaut-lost-in-space_bGtua2eUmZqaraWkpJRobWllrWdma2U.jpg"); */
   height: 800px;
+  background-image: url("https://cdn.dribbble.com/users/2992177/screenshots/5879163/85402b47296909.596c8cd991950.png");
+  background-position: center;
   padding-top: 100px;
   width: 100%;
   display: flex;
@@ -46,4 +46,9 @@
   @media screen and (max-width: 1100px) {
     margin: 2rem 2rem;
   }
+}
+
+.add-form {
+  background-image: white;
+  border-radius: 2rem;
 }

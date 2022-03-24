@@ -47,7 +47,9 @@ function ShoePage() {
        <Category filter={filter} category={category} />
         <div className='card-holder' >
           {shoeCards}
-          <AddShoe/>
+          <AddShoe
+          menuItems={menuItems}
+          />
         </div>
       </Container>
     </>

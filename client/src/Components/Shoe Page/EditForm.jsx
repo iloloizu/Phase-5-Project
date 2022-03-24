@@ -1,52 +1,124 @@
-import React from 'react'
-import { Form, Button, InputGroup } from 'react-bootstrap'
+import React, {useState} from 'react';
+import { Form, Button, InputGroup, FormLabel } from 'react-bootstrap';
+import { useDispatch } from "react-redux";
+import { updateNewSneakers } from '../../features/shoe';
 
-function EditForm({onSubmit, handleClose, colorway, name, description, price, link, image, brand}) {
-  return (
+function EditForm({onSubmit, handleClose, colorway, name, description, price, link, image, brand}) {    
+    const dispatch = useDispatch();
+    const [shoeName, setShoeName] = useState("");
+    const [shoeColorway, setShoeColorway] = useState("");
+    const [shoeDescription, setShoeDescription] = useState("");
+    const [shoePrice, setShoePrice] = useState("");
+    const [shoeLink, setShoeLink] = useState("");
+    const [shoeImage, setShoeImage] = useState([]);
+    const [shoeBrand, setShoeBrand] = useState("");
+
+    function handleName(e) {
+        setShoeName(e.target.value)
+    }
+
+    function handleColorway(e) {
+        setShoeColorway(e.target.value)
+    }
+
+    function handleDescription(e) {
+        setShoeDescription(e.target.value)
+    }
+
+    function handlePrice(e) {
+        setShoePrice(e.target.value)
+    }
+
+    function handleLink(e) {
+        setShoeImage(e.target.value)
+    }
+
+    function handleImage(e) {
+        setShoeBrand(e.target.value)
+    }
+
+    function handleBrand(e) {
+        setShoeLink(e.target.value)
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+    
+        const sneakerObj = {
+            colorway: shoeColorway,
+            name: shoeName,
+            description: shoeDescription,
+            price: shoePrice,
+            link: shoeLink,
+            image: shoeImage,
+            brand: shoeBrand,
+          };
+
+        dispatch(updateNewSneakers(sneakerObj))
+          .unwrap()
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+
+        setShoeName("");
+        setShoeColorway("");
+        setShoeDescription("");
+        setShoePrice("");
+        setShoeLink("");
+        setShoeImage("");
+        setShoeBrand("");
+    
+        handleClose()
+      }
+
+    return (
     <div>
-        <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Shoe Name</Form.Label>
-                <Form.Control type="text" placeholder={name} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form class="form-group" onSubmit={handleSubmit}> 
+                {/* <input onChange={handleName} className="mb-3" controlId="formBasicEmail"> */}
+                <Form.Label for="exampleFormControlInput1">Shoe Name</Form.Label>
+                <Form.Control 
+                onChange={handleName}
+                type="text"
+                placeholder={"ex. Air Jordan 1 High"} 
+                className="mb-3"
+                controlId="formBasicEmail" />
+            {/* <div type="submit" style={{ textAlign: "center" }}>
+                <button onSubmit={handleSubmit} className="form-input">New Villager</button>
+            </div> */}
+           
                 <Form.Label>Colorway</Form.Label>
-                <Form.Control type="text" placeholder={colorway} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Control 
+                onChange={handleColorway} 
+                type="text" 
+                placeholder={colorway}
+                className="mb-3"
+                controlId="formBasic" />
+          
                 <Form.Label>Brand</Form.Label>
-                <Form.Control type="text" placeholder={brand} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId={"formBasicPassword"}>
+                <Form.Control onChange={handleBrand} type="text" placeholder={brand} />
+            
                 <Form.Label>Price</Form.Label>
                 <InputGroup className="mb-3">
                     <InputGroup.Text>$</InputGroup.Text>
-                    <Form.Control type="number" placeholder={price} />
+                    <Form.Control onChange={handlePrice} type="number" placeholder={price} />
                 </InputGroup>
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            
                 <Form.Label>Image Link</Form.Label>
-                <Form.Control type="text" placeholder={image} />
-            </Form.Group>
+                <Form.Control onChange={handleImage}  type="text" placeholder={image}/>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Link to Purchase</Form.Label>
-                <Form.Control type="text" placeholder={link} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Control onChange={handleLink}  type="text" placeholder={link} />
+  
                 <Form.Label>Description</Form.Label>
-                <Form.Control type="text" placeholder={description} />
-            </Form.Group>
-
-            <Button className="right-button" variant="success" type="submit" onChange={onSubmit}>
+                <Form.Control onChange={handleDescription} type="text" placeholder={description} />
+            
+            <Button className="right-button" variant="success" type="submit" onClick={handleSubmit}>
                     Submit
             </Button><br/><br/>
-            <Button className="right-button" variant="secondary" onClick={handleClose}>
+            <Button className="right-button" variant="secondary" onClick={handleClose} >
                     Close
             </Button>
         </Form>

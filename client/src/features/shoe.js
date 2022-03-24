@@ -20,6 +20,19 @@ export const createSneakers = createAsyncThunk(
   }
 );
 
+export const updateNewSneakers = createAsyncThunk(
+  "newSneakers/updateNewSneakers",
+  async (newSneakers) => {
+    return fetch(`/sneakers/${newSneakers.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newSneakers),
+    }).then((res) => res.json());
+  }
+);
+
 const sneakersSlice = createSlice({
   name: "sneakers",
   initialState: {
@@ -48,6 +61,12 @@ const sneakersSlice = createSlice({
     [createSneakers.fulfilled](state, action) {
       state.entities = [...state.entities, action.payload];
     },
+    [updateNewSneakers.fulfilled](state, action) {
+      state = state.filter(
+        (sneaker) => sneaker.id !== action.payload.id
+      );
+      state = [...state, action.payload];
+    }
   },
 });
 

@@ -29,6 +29,7 @@ function ShoeCard({colorway, name, description, price, link, image, brand}) {
           image: {image},
           brand: {brand},
         })
+        
       );
   }
 
