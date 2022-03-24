@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Card, Button, ListGroup, Dropdown, Modal } from 'react-bootstrap'
+import { Card, Button, Dropdown, Modal } from 'react-bootstrap'
 import EditForm from "./EditForm";
-import stockX from "./StockX_logo_white.png"
 
 import { useDispatch } from "react-redux";
 import { createSneakers } from "../../features/shoe"
+import { deleteSneakers } from '../../features/shoe';
+import { useNavigate } from "react-router-dom";
 
-function ShoeCard({colorway, name, description, price, link, image, brand}) {
+function ShoeCard({colorway, name, description, price, link, image, brand, id}) {
 //   const sneakerData = useSelector((state) => [...state]);
 
   // console.log(fetchFromStore)
@@ -29,14 +30,18 @@ function ShoeCard({colorway, name, description, price, link, image, brand}) {
           image: {image},
           brand: {brand},
         })
-        
       );
+  }
+
+  function deleteButton() {
+    dispatch(deleteSneakers(id));
+    window.location.reload()
   }
 
   return (
     <>
       <Card style={{ width: '25rem' }}>
-        <Card.Img variant="left" src={`${image}`} alt={name} />
+        <Card.Img variant="left" src={image} alt={name} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Subtitle>{colorway}</Card.Subtitle>
@@ -44,11 +49,10 @@ function ShoeCard({colorway, name, description, price, link, image, brand}) {
            {description}
           </Card.Text>
           <Button variant="dark" href={link}>
-             {"Purchase for $"}{price}
-             {/* {` from ${stockX}`}  */}
+             {"Purchase for $"}{price}{" from StockX"}
              </Button><br/><br/>
           <Button variant="dark" href={link}>
-             {"Purchase from Space City Sneakers"} </Button>
+             {"Add to Cart"} </Button>
             <br/>
             <br/>
           <Dropdown>
@@ -57,7 +61,7 @@ function ShoeCard({colorway, name, description, price, link, image, brand}) {
             </Dropdown.Toggle>
             <Dropdown.Menu variant="flush">
               <Dropdown.Item>
-                <Button variant="danger">Delete</Button>
+                <Button onClick={deleteButton} variant="danger">Delete</Button>
               </Dropdown.Item>
               <Dropdown.Item>
                 <Button variant="success" onClick={handleShow}>
@@ -85,6 +89,7 @@ function ShoeCard({colorway, name, description, price, link, image, brand}) {
           link={link}
           image={image}
           brand={brand}
+          id={id}
           handleClose={handleClose}
           onSubmit={onSubmit}
           />

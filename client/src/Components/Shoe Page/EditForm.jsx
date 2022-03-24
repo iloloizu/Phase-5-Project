@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import { Form, Button, InputGroup, FormLabel } from 'react-bootstrap';
+import { Form, Button, InputGroup, FormLabel, Card } from 'react-bootstrap';
 import { useDispatch } from "react-redux";
-import { updateNewSneakers } from '../../features/shoe';
+import { updateSneakers } from '../../features/shoe';
 
-function EditForm({onSubmit, handleClose, colorway, name, description, price, link, image, brand}) {    
+function EditForm({onSubmit, handleClose, colorway, name, description, price, link, image, brand, id}) {    
     const dispatch = useDispatch();
     const [shoeName, setShoeName] = useState("");
     const [shoeColorway, setShoeColorway] = useState("");
@@ -44,7 +44,19 @@ function EditForm({onSubmit, handleClose, colorway, name, description, price, li
     function handleSubmit(e) {
         e.preventDefault();
     
-        const sneakerObj = {
+        // const sneakerObj = {
+        //     id: id,
+        //     colorway: shoeColorway,
+        //     name: shoeName,
+        //     description: shoeDescription,
+        //     price: shoePrice,
+        //     link: shoeLink,
+        //     image: shoeImage,
+        //     brand: shoeBrand,
+        //   };
+
+        dispatch ( updateSneakers ({
+            id: id,
             colorway: shoeColorway,
             name: shoeName,
             description: shoeDescription,
@@ -52,9 +64,7 @@ function EditForm({onSubmit, handleClose, colorway, name, description, price, li
             link: shoeLink,
             image: shoeImage,
             brand: shoeBrand,
-          };
-
-        dispatch(updateNewSneakers(sneakerObj))
+        }))
           .unwrap()
           .then((data) => {
             console.log(data);
@@ -75,7 +85,7 @@ function EditForm({onSubmit, handleClose, colorway, name, description, price, li
       }
 
     return (
-    <div>
+     <div>
             <Form class="form-group" onSubmit={handleSubmit}> 
                 {/* <input onChange={handleName} className="mb-3" controlId="formBasicEmail"> */}
                 <Form.Label for="exampleFormControlInput1">Shoe Name</Form.Label>
@@ -94,16 +104,17 @@ function EditForm({onSubmit, handleClose, colorway, name, description, price, li
                 onChange={handleColorway} 
                 type="text" 
                 placeholder={colorway}
+                value={colorway}
                 className="mb-3"
                 controlId="formBasic" />
           
                 <Form.Label>Brand</Form.Label>
-                <Form.Control onChange={handleBrand} type="text" placeholder={brand} />
+                <Form.Control onChange={handleBrand} type="text" placeholder={brand} value={brand}/>
             
                 <Form.Label>Price</Form.Label>
                 <InputGroup className="mb-3">
                     <InputGroup.Text>$</InputGroup.Text>
-                    <Form.Control onChange={handlePrice} type="number" placeholder={price} />
+                    <Form.Control onChange={handlePrice} type="number" placeholder={price} value={price}/>
                 </InputGroup>
             
                 <Form.Label>Image Link</Form.Label>
@@ -114,7 +125,7 @@ function EditForm({onSubmit, handleClose, colorway, name, description, price, li
   
                 <Form.Label>Description</Form.Label>
                 <Form.Control onChange={handleDescription} type="text" placeholder={description} />
-            
+            <br/>
             <Button className="right-button" variant="success" type="submit" onClick={handleSubmit}>
                     Submit
             </Button><br/><br/>
@@ -122,7 +133,7 @@ function EditForm({onSubmit, handleClose, colorway, name, description, price, li
                     Close
             </Button>
         </Form>
-    </div>
+</div>
 )
 }
 

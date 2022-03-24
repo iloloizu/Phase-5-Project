@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Form, Button, InputGroup, Container } from 'react-bootstrap';
+import { Form, Button, InputGroup, Container, Card } from 'react-bootstrap';
 import { useDispatch } from "react-redux";
 import { createSneakers } from "../../features/shoe";
 
@@ -31,15 +31,15 @@ function AddShoe({menuItems}) {
     }
 
     function handleLink(e) {
-        setShoeImage(e.target.value)
+        setShoeLink(e.target.value)
     }
 
     function handleImage(e) {
-        setShoeBrand(e.target.value)
+        setShoeImage(e.target.value)
     }
 
     function handleBrand(e) {
-        setShoeLink(e.target.value)
+        setShoeBrand(e.target.value)
     }
 
     function handleSubmit(e) {
@@ -76,51 +76,10 @@ function AddShoe({menuItems}) {
 
   return (
     <div>
-        {/* <Card style={{ width: '25rem' }}>
-            <div className="form-card">
-                <h2 className="form-title">Add New Sneakers</h2>
-            <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Shoe Name</Form.Label>
-                    <Form.Control type="text" placeholder="ex. Air Jordan 1 High" />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Colorway</Form.Label>
-                    <Form.Control type="text" placeholder="ex. Bred (2016)" />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Brand</Form.Label>
-                    <Form.Control type="text" placeholder="ex. Jordan" />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Price</Form.Label>
-                    <Form.Control type="number" placeholder="ex. 170" />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Image Link</Form.Label>
-                    <Form.Control type="text" placeholder="Image Link" />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Link to Purchase</Form.Label>
-                    <Form.Control type="text" placeholder="Link to Purchase" />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Description</Form.Label>
-                    <Form.Control type="text" placeholder='ex. "Jordan Brand reintroduced the "OG" versions of..."' />
-                </Form.Group>
-                <Button variant="success" type="submit">
-                    Submit
-                </Button>
-            </Form>
-            </div>
-        </Card> */}
+    <Card style={{ width: '25rem' }}>
         <Container className="add-form">
+        <div className="form-card">
+        <h2 className="form-title">Add New Sneakers</h2>
         <Form class="form-group" onSubmit={handleSubmit}> 
                 {/* <input onChange={handleName} className="mb-3" controlId="formBasicEmail"> */}
                 <Form.Label for="exampleFormControlInput1">Shoe Name</Form.Label>
@@ -159,12 +118,14 @@ function AddShoe({menuItems}) {
   
                 <Form.Label>Description</Form.Label>
                 <Form.Control onChange={handleDescription} type="text" placeholder={menuItems.description} />
-            
+            <br/>
             <Button className="right-button" variant="success" type="submit" onSubmit={handleSubmit}>
                     Submit
             </Button><br/><br/>
-        </Form>
+         </Form>
+        </div>
         </Container>
+        </Card>
     </div>
   )
 }

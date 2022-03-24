@@ -20,16 +20,29 @@ export const createSneakers = createAsyncThunk(
   }
 );
 
-export const updateNewSneakers = createAsyncThunk(
-  "newSneakers/updateNewSneakers",
-  async (newSneakers) => {
-    return fetch(`/sneakers/${newSneakers.id}`, {
+export const updateSneakers = createAsyncThunk(
+  "newSneakers/updateSneakers",
+  async (updateSneakers) => {
+    return fetch(`/sneakers/${updateSneakers.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newSneakers),
+      body: JSON.stringify(updateSneakers),
     }).then((res) => res.json());
+  }
+);
+
+export const deleteSneakers = createAsyncThunk(
+  "sneakers/deleteSneakers",
+  async (sneakerId) => {
+    fetch(`/sneakers/${sneakerId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return sneakerId;
   }
 );
 
@@ -40,14 +53,14 @@ const sneakersSlice = createSlice({
     status: "idle", // loading state
   },
   reducers: {
-    sneakerAdded(state, action) {
-      // using createSlice lets us mutate state!
-      state.entities.push(action.payload);
-    },
-    sneakerUpdated(state, action) {
-      const sneaker = state.entities.find((sneaker) => sneaker.id === action.payload.id);
-      sneaker.url = action.payload.url;
-    },
+    // sneakerAdded(state, action) {
+    //   // using createSlice lets us mutate state!
+    //   state.entities.push(action.payload);
+    // },
+    // sneakerUpdated(state, action) {
+    //   const sneaker = state.entities.find((sneaker) => sneaker.id === action.payload.id);
+    //   sneaker.url = action.payload.url;
+    // },
   },
   extraReducers: {
     // handle async actions: pending, fulfilled, rejected (for errors)
@@ -61,15 +74,21 @@ const sneakersSlice = createSlice({
     [createSneakers.fulfilled](state, action) {
       state.entities = [...state.entities, action.payload];
     },
-    [updateNewSneakers.fulfilled](state, action) {
-      state = state.filter(
-        (sneaker) => sneaker.id !== action.payload.id
+    [deleteSneakers.fulfilled](state, action) {
+      state.entities = state.entities.filter(
+        (sneaker) => sneaker.id !== action.payload
       );
-      state = [...state, action.payload];
+    },
+    [updateSneakers.fulfilled](state, action) {
+      state.entities = state.entities.filter(
+        (sneaker) => sneaker.id !== action.payload['id']
+      );
+      state.entities = [...state.entities, action.payload];
     }
   },
 });
 
-export const { sneakerAdded, sneakerUpdated } = sneakersSlice.actions;
+
+// export const { sneakerAdded, sneakerUpdated } = sneakersSlice.actions;
 
 export default sneakersSlice.reducer;
