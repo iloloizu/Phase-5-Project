@@ -1,6 +1,9 @@
 .App {
-  background-color: #bdbec2;
-  border: red;
+  background-color: white;
+}
+
+.dark {
+  background-color: #181818 !important;
 }
 
 #div_top_hypers {

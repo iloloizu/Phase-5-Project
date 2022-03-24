@@ -40,7 +40,7 @@ function ShoeCard({colorway, name, description, price, link, image, brand, id}) 
 
   return (
     <>
-      <Card style={{ width: '25rem' }}>
+      <Card variant="dark" style={{ width: '25rem' }}>
         <Card.Img variant="left" src={image} alt={name} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
@@ -53,6 +53,10 @@ function ShoeCard({colorway, name, description, price, link, image, brand, id}) 
              </Button><br/><br/>
           <Button variant="dark" href={link}>
              {"Add to Cart"} </Button>
+            <br/>
+            <br/>
+          <Button variant="dark" href={link}>
+             {"Add to Shop"} </Button>
             <br/>
             <br/>
           <Dropdown>

@@ -20,10 +20,11 @@ import Profile from "../Profile Page/Profile";
 import NewsPage from "../NewsPage/NewsPage";
 import Three from "../Three";
 import Holder from "../ThreeJS Components/Holder";
+import Cart from "../Shop/Cart";
 
 function App() {
   const [userData, setUserData] = useState("");
-
+  const [isClicked, setIsClicked] = useState(false);
   const [user, setUser] = useState(null);
 
   const navigate = useNavigate()
@@ -60,7 +61,7 @@ function App() {
         }
     });
     navigate("/");
-}
+    }
 
   if (!user) return (
     <>
@@ -70,12 +71,25 @@ function App() {
     <Login onLogin={setUser}/>
     </>
   )
-    
+
+  function darkMode() {
+    // let element = document.querySelector(".App");
+   
+    // element.classList.toggle("dark");
+    console.log("hello")
+    setIsClicked(isClicked => !isClicked);
+  }
+
   return (
-    <div className="App" style={{backgroundColor: `${colorUser.color1}`}}>
+    <div className="App" style={isClicked ? ( {backgroundColor: `#181818`, color: `white`}) : ({backgroundColor: `${colorUser.color1}`})} >
       <div className=".container">
         <div className="stars">
-          <NavBar user={user} handleLogOutClick={handleLogOutClick}/>
+          <NavBar 
+          user={user} 
+          handleLogOutClick={handleLogOutClick}
+          isClicked={isClicked}
+          darkMode={darkMode}
+          />
             <Routes> 
               <Route exact path="/home" element={<Home/>} />
               <Route exact path="/shoes" element={<ShoePage/>} />
@@ -84,10 +98,15 @@ function App() {
               <Route exact path="/news" element={<NewsPage/>} />
               <Route exact path="/three" element={<Three/>} />
               <Route exact path="/" element={<Home/>} />
+              <Route exact path="/cart" element={<Cart/>} />
             </Routes>
         </div>
         </div>
+        <footer>
+          <p><p>©2022 Ilolo Izu</p></p>
+        </footer>
     </div>
+
   );
 }
 

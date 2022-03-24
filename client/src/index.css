@@ -1,6 +1,9 @@
 .App {
-  background-color: #bdbec2;
-  /* background-image: linear-gradient(navy, cyan); */
+  background-color: white;
+}
+
+.dark {
+  background-color: #181818 !important;
 }
 
 .canvas {
