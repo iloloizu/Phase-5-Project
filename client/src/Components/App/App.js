@@ -81,7 +81,7 @@ function App() {
   }
 
   return (
-    <div className="App" style={isClicked ? ( {backgroundColor: `#181818`, color: `white`}) : ({backgroundColor: `${colorUser.color1}`})} >
+    <div className="App" style={isClicked ? ( {backgroundColor: `#181818`, color: `${colorUser.color2}`}) : ({backgroundColor: `${colorUser.color1}`})} >
       <div className=".container">
         <div className="stars">
           <NavBar 
