@@ -7,7 +7,7 @@ import { createSneakers } from "../../features/shoe"
 import { deleteSneakers } from '../../features/shoe';
 import { useNavigate } from "react-router-dom";
 
-function ShoeCard({colorway, name, description, price, link, image, brand, id}) {
+function ShoeCard({setFavorites, favorites, colorway, name, description, price, link, image, brand, id}) {
 //   const sneakerData = useSelector((state) => [...state]);
 
   // console.log(fetchFromStore)
@@ -17,6 +17,17 @@ function ShoeCard({colorway, name, description, price, link, image, brand, id}) 
   const handleShow = () => setShow(true);
 
   const dispatch = useDispatch();
+  
+  const newShoe = {
+    id: {id},
+    colorway: {colorway},
+    name: {name},
+    description: {description},
+    price: {price},
+    link: {link},
+    image: {image},
+    brand: {brand},
+  }
 
   function onSubmit(event) {
     event.preventDefault();
@@ -37,7 +48,15 @@ function ShoeCard({colorway, name, description, price, link, image, brand, id}) 
     dispatch(deleteSneakers(id));
     window.location.reload()
   }
+  
+  const shopArr = [favorites]
 
+  function addShoesToList(){
+    setFavorites([...favorites, newShoe])
+    console.log(favorites)
+    console.log("hello")
+  }
+  
   return (
     <>
       <Card variant="dark" style={{ width: '25rem' }}>
@@ -55,7 +74,9 @@ function ShoeCard({colorway, name, description, price, link, image, brand, id}) 
              {"Add to Cart"} </Button>
             <br/>
             <br/>
-          <Button variant="dark" href={link}>
+          <Button onClick={addShoesToList}
+          //  variant="dark"
+           >
              {"Add to Shop"} </Button>
             <br/>
             <br/>

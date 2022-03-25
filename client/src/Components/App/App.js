@@ -26,6 +26,7 @@ function App() {
   const [userData, setUserData] = useState("");
   const [isClicked, setIsClicked] = useState(false);
   const [user, setUser] = useState(null);
+  const [favorites, setFavorites] = useState([]);
 
   const navigate = useNavigate()
   
@@ -71,14 +72,31 @@ function App() {
     <Login onLogin={setUser}/>
     </>
   )
-
+    //dark mode
   function darkMode() {
-    // let element = document.querySelector(".App");
-   
-    // element.classList.toggle("dark");
-    console.log("hello")
     setIsClicked(isClicked => !isClicked);
   }
+
+  //favorites
+
+
+//   function handleLike() {
+//     // setCart([...cart, food[position]])
+//     const currentFood = food[position]
+//     const allFoods = [...userData['foods'], currentFood]
+//     const addedToUsers= {...userData, foods: allFoods}
+//     setUserData(addedToUsers)
+    
+//     fetch(`http://localhost:9292/likes/${currentFood['id']}/${userData["id"]}`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: "",
+//     })
+//       .then((r) => r.json())
+// }
+
 
   return (
     <div className="App" style={isClicked ? ( {backgroundColor: `#181818`, color: `${colorUser.color2}`}) : ({backgroundColor: `${colorUser.color1}`})} >
@@ -92,7 +110,9 @@ function App() {
           />
             <Routes> 
               <Route exact path="/home" element={<Home/>} />
-              <Route exact path="/shoes" element={<ShoePage/>} />
+              <Route exact path="/shoes" element={<ShoePage 
+              setFavorites={setFavorites}
+              favorites={favorites} />} />
               <Route exact path="/shop" element={<Shop/>} />
               <Route exact path="/profile" element={<Profile/>} />
               <Route exact path="/news" element={<NewsPage/>} />

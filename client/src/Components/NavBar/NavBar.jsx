@@ -3,7 +3,6 @@ import {LinkContainer} from 'react-router-bootstrap'
 import {Navbar, Nav, Form, Container} from 'react-bootstrap'
 
 export default function NavBar({darkMode}) {
-  console.log(darkMode)
     return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="div_top_hypers">
                     <Navbar bg="dark" expand="lg">

@@ -7,7 +7,8 @@ import ShoeCard from './shoeCard';
 import Category from "./Category";
 import AddShoe from './AddShoe';
 
-function ShoePage() {
+
+function ShoePage({setFavorites, favorites}) {
   const fetchFromStore = useSelector((state) => state.sneakers.entities)
 
   const allShoes = ['All', ...new Set(fetchFromStore.map(shoe => shoe.brand))];
@@ -38,6 +39,8 @@ function ShoePage() {
     link={shoe.link}
     price={shoe.price}
     brand={shoe.brand}
+    setFavorites={setFavorites}
+    favorites={favorites}
     // fetchFromStore={fetchFromStore}
   /> )
 
