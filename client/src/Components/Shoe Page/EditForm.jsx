@@ -94,7 +94,7 @@ function EditForm({onSubmit, handleClose, colorway, name, description, price, li
                 type="text"
                 placeholder={"ex. Air Jordan 1 High"} 
                 className="mb-3"
-                controlId="formBasicEmail" />
+                controlId="formBasicEmail"/>
             {/* <div type="submit" style={{ textAlign: "center" }}>
                 <button onSubmit={handleSubmit} className="form-input">New Villager</button>
             </div> */}

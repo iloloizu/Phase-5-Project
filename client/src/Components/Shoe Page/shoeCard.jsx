@@ -53,8 +53,7 @@ function ShoeCard({setFavorites, favorites, colorway, name, description, price, 
 
   function addShoesToList(){
     setFavorites([...favorites, newShoe])
-    console.log(favorites)
-    console.log("hello")
+
   }
   
   return (

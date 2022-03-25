@@ -1,8 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {LinkContainer} from 'react-router-bootstrap'
-import {Navbar, Nav, Form, Container} from 'react-bootstrap'
+import {Navbar, Nav, Form, Container, Button, Modal} from 'react-bootstrap'
 
-export default function NavBar({darkMode}) {
+export default function NavBar({favorites, darkMode}) {
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="div_top_hypers">
                     <Navbar bg="dark" expand="lg">
@@ -34,20 +40,29 @@ export default function NavBar({darkMode}) {
                                     
                                         <Navbar.Collapse className="justify-content-end">
                                             <Form>
-                                                
-                                            <Form.Check 
-                                                onClick={darkMode}
-                                                type="switch"
-                                                id="custom-switch"
-                                            />
+                                                <Form.Check 
+                                                    onClick={darkMode}
+                                                    type="switch"
+                                                    id="custom-switch"
+                                                />
                                             </Form>
-                                        {/* <Navbar.Text>
-                                            Signed in as: <a href="#login">Mark Otto</a>
-                                        </Navbar.Text> */}
+                                            <Button variant="secondary" className="padding-right">My Cart</Button> 
+                                            
                                         </Navbar.Collapse>
-                                   
+
                                 
                             </Navbar.Collapse>
             </Navbar>
+                                            <Modal 
+                                                show={show}
+                                                onHide={handleClose}
+                                                >
+                                                    <Modal.Header closeButton>
+                                                    <Modal.Title>Edit a Sneaker Card</Modal.Title>
+                                                    </Modal.Header>
+                                                    <Modal.Body>
+                                                        Ya cart
+                                                    <Modal.Body/>
+                                            <Modal/>
     </nav>
   )}

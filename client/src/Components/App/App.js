@@ -77,7 +77,7 @@ function App() {
     setIsClicked(isClicked => !isClicked);
   }
 
-  //favorites
+  // favorites
 
 
 //   function handleLike() {
@@ -107,6 +107,7 @@ function App() {
           handleLogOutClick={handleLogOutClick}
           isClicked={isClicked}
           darkMode={darkMode}
+          favorites={favorites}
           />
             <Routes> 
               <Route exact path="/home" element={<Home/>} />
