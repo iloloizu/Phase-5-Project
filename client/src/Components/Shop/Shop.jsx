@@ -2,7 +2,7 @@ import React from 'react';
 import ShopCard from "./ShopCard"
 
 function Shop({setFavorites, favorites}) {
-    console.log(favorites[1].id)
+    // console.log(favorites[1].id)
 
   const storeFront = favorites.map((shoe)=>
   <ShopCard
@@ -15,6 +15,7 @@ function Shop({setFavorites, favorites}) {
     link={shoe.link}
     price={shoe.price}
     brand={shoe.brand}
+    favorites={favorites}
   /> )
 
   return (
