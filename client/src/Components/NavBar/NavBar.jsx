@@ -66,7 +66,6 @@ export default function NavBar({favorites, darkMode}) {
                                             <Button onClick={handleShow} variant="secondary" className="padding-right">My Cart</Button> 
                                             
                                         </Navbar.Collapse>
-
                                 
                             </Navbar.Collapse>
             </Navbar>

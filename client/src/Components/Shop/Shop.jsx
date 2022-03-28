@@ -2,7 +2,6 @@ import React from 'react';
 import ShopCard from "./ShopCard"
 
 function Shop({setFavorites, favorites, cartItem, setCartItem}) {
-    // console.log(favorites[1].id)
 
   const storeFront = favorites.map((shoe)=>
   <ShopCard

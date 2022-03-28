@@ -38,10 +38,14 @@ function ShopCard(favorites, cartItem, setCartItem) {
     //     );
     // }
 
+    console.log(newShoe)
+    console.log(cartItem)
+    setCartItem([...cartItem, newShoe])
+
     function addShoesToCart(){
-      setCartItem([...cartItem, newShoe])
-      console.log(`${favorites.name.name} added`)
+      // setCartItem("hi")
       console.log(cartItem)
+      // console.log(`${favorites.name.name} added`)
       // alert(`${favorites.name.name} added`)
   
       // fetch(`http://localhost:3000/likes/`, {
