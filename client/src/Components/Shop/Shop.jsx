@@ -1,7 +1,7 @@
 import React from 'react';
 import ShopCard from "./ShopCard"
 
-function Shop({setFavorites, favorites}) {
+function Shop({setFavorites, favorites, cartItem, setCartItem}) {
     // console.log(favorites[1].id)
 
   const storeFront = favorites.map((shoe)=>
@@ -16,6 +16,8 @@ function Shop({setFavorites, favorites}) {
     price={shoe.price}
     brand={shoe.brand}
     favorites={favorites}
+    cartItem={cartItem}
+    setCartItem={setCartItem}
   /> )
 
   return (

@@ -27,6 +27,7 @@ function App() {
   const [isClicked, setIsClicked] = useState(false);
   const [user, setUser] = useState(null);
   const [favorites, setFavorites] = useState([]);
+  const [cartItem, setCartItem] = useState([]);
 
   const navigate = useNavigate()
   
@@ -74,6 +75,7 @@ function App() {
     setIsClicked(isClicked => !isClicked);
   }
 
+  
   // favorites
 
 
@@ -110,10 +112,16 @@ function App() {
               <Route exact path="/home" element={<Home/>} />
               <Route exact path="/shoes" element={<ShoePage 
               setFavorites={setFavorites}
-              favorites={favorites} />} />
+              favorites={favorites} 
+              cartItem={cartItem}
+              setCartItem={setCartItem}
+              />} />
               <Route exact path="/shop" element={<Shop
               setFavorites={setFavorites}
-              favorites={favorites} />} />
+              favorites={favorites}
+              cartItem={cartItem}
+              setCartItem={setCartItem}
+              />} />
               <Route exact path="/profile" element={<Profile/>} />
               <Route exact path="/news" element={<NewsPage/>} />
               <Route exact path="/three" element={<Three/>} />

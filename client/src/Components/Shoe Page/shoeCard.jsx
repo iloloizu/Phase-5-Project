@@ -7,7 +7,7 @@ import { createSneakers } from "../../features/shoe"
 import { deleteSneakers } from '../../features/shoe';
 import { useNavigate } from "react-router-dom";
 
-function ShoeCard({setFavorites, favorites, colorway, name, description, price, link, image, brand, id}) {
+function ShoeCard({cartItem, setCartItem, setFavorites, favorites, colorway, name, description, price, link, image, brand, id}) {
 //   const sneakerData = useSelector((state) => [...state]);
 
   // console.log(fetchFromStore)
@@ -48,13 +48,26 @@ function ShoeCard({setFavorites, favorites, colorway, name, description, price, 
     dispatch(deleteSneakers(id));
     window.location.reload()
   }
-  
-  const shopArr = [favorites]
 
   function addShoesToList(){
     setFavorites([...favorites, newShoe])
     console.log(`${name} added`)
     console.log(favorites)
+
+    // fetch(`http://localhost:3000/likes/`, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: "",
+    //   })
+    //     .then((r) => r.json())
+  }
+
+  function addShoesToCart(){
+    setCartItem([...cartItem, newShoe])
+    console.log(`${name} added`)
+    console.log(cartItem)
 
     // fetch(`http://localhost:3000/likes/`, {
     //     method: "POST",
