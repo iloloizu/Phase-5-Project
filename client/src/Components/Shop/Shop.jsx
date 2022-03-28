@@ -1,15 +1,25 @@
 import React from 'react';
-// import { useState,
-  //  useEffect
-  //  } from 'react';
-// import ShopCard from './ShopCard';
+import ShopCard from "./ShopCard"
 
-function Shop() {
-    // const [shopItems, setShopItems] = useState([""])
+function Shop({setFavorites, favorites}) {
+    console.log(favorites[1].id)
+
+  const storeFront = favorites.map((shoe)=>
+  <ShopCard
+    key = {shoe.id}
+    id = {shoe.id}
+    name={shoe.name}
+    colorway={shoe.colorway}
+    description={shoe.description}
+    image={shoe.image}
+    link={shoe.link}
+    price={shoe.price}
+    brand={shoe.brand}
+  /> )
 
   return (
     <div>Shop
-        {/* {shopItemMap} */}
+        {storeFront}
     </div>
   )
 }

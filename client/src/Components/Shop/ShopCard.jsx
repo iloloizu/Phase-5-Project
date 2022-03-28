@@ -1,10 +1,12 @@
 import React from 'react';
 // import { useState, useEffect } from 'react';
 
-function ShopCard(item) {
-    console.log(item)
+function ShopCard({colorway, name, description, price, link, image, brand, id}) {
+    // console.log(item)
   return (
-    <div>ShopCard</div>
+    <div>ShopCard
+      {/* <p>purchase {name}</p> */}
+    </div>
   )
 }
 

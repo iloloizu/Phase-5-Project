@@ -66,9 +66,6 @@ function App() {
 
   if (!user) return (
     <>
-    <Container>
-      <Alert className="mt-3" variant="primary"> Please Login OR Signup To Create A New Account</Alert>
-    </Container>
     <Login onLogin={setUser}/>
     </>
   )
@@ -114,18 +111,21 @@ function App() {
               <Route exact path="/shoes" element={<ShoePage 
               setFavorites={setFavorites}
               favorites={favorites} />} />
-              <Route exact path="/shop" element={<Shop/>} />
+              <Route exact path="/shop" element={<Shop
+              setFavorites={setFavorites}
+              favorites={favorites} />} />
               <Route exact path="/profile" element={<Profile/>} />
               <Route exact path="/news" element={<NewsPage/>} />
               <Route exact path="/three" element={<Three/>} />
               <Route exact path="/" element={<Home/>} />
-              <Route exact path="/cart" element={<Cart/>} />
+              <Route exact path="/cart" element={<Cart
+              />} />
             </Routes>
         </div>
         </div>
         <canvas id="c"></canvas>
         <footer>
-          <p><p>©2022 Ilolo Izu</p></p>
+          <p className="center">©2022 Ilolo Izu</p>
         </footer>
     </div>
 

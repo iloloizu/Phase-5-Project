@@ -53,16 +53,17 @@ function ShoeCard({setFavorites, favorites, colorway, name, description, price, 
 
   function addShoesToList(){
     setFavorites([...favorites, newShoe])
-    console.log(`${favorites} added`)
+    console.log(`${name} added`)
+    console.log(favorites)
 
-    fetch(`http://localhost:3000/likes/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: "",
-      })
-        .then((r) => r.json())
+    // fetch(`http://localhost:3000/likes/`, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: "",
+    //   })
+    //     .then((r) => r.json())
   }
   
   return (
