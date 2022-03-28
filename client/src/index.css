@@ -59,3 +59,56 @@
 .padding-right {
   padding-right: 20px;
 }
+
+.behind {
+  z-index: 1;
+}
+
+.front {
+  z-index: 2;
+}
+
+.canvas-holder {
+  height: 800px;
+}
+
+.glass {
+  color: white;
+  position: relative;
+  background: inherit;
+  overflow: hidden;
+  width: 70%;
+  height: 70%;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.glass:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: -20px;
+
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.wallpaper {
+  background-image: url("https://wallpaperaccess.com/full/1247375.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  justify-content: center;
+}

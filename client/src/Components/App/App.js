@@ -123,6 +123,7 @@ function App() {
             </Routes>
         </div>
         </div>
+        <canvas id="c"></canvas>
         <footer>
           <p><p>©2022 Ilolo Izu</p></p>
         </footer>

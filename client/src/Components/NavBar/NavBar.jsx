@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {LinkContainer} from 'react-router-bootstrap'
 import {Navbar, Nav, Form, Container, Button, Modal} from 'react-bootstrap'
+import ShoeContainer from '../Shoe Page/ShoeContainer';
 
 export default function NavBar({favorites, darkMode}) {
 
@@ -8,9 +9,25 @@ export default function NavBar({favorites, darkMode}) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    
+    const shoeCard = favorites.map((shoe) => 
+        <ShoeContainer 
+        key = {shoe.id}
+        id = {shoe.id}
+        name={shoe.name}
+        colorway={shoe.colorway}
+        description={shoe.description}
+        image={shoe.image}
+        link={shoe.link}
+        price={shoe.price}
+        brand={shoe.brand}
+        favorites={favorites}
+            />
+        )
 
     return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="div_top_hypers">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="div_top_hypers">
                     <Navbar bg="dark" expand="lg">
                         <LinkContainer to="/home">
                             <Navbar.Brand>Space City Sneakers</Navbar.Brand>
@@ -46,23 +63,25 @@ export default function NavBar({favorites, darkMode}) {
                                                     id="custom-switch"
                                                 />
                                             </Form>
-                                            <Button variant="secondary" className="padding-right">My Cart</Button> 
+                                            <Button onClick={handleShow} variant="secondary" className="padding-right">My Cart</Button> 
                                             
                                         </Navbar.Collapse>
 
                                 
                             </Navbar.Collapse>
             </Navbar>
-                                            <Modal 
-                                                show={show}
-                                                onHide={handleClose}
-                                                >
-                                                    <Modal.Header closeButton>
-                                                    <Modal.Title>Edit a Sneaker Card</Modal.Title>
-                                                    </Modal.Header>
-                                                    <Modal.Body>
-                                                        Ya cart
-                                                    <Modal.Body/>
-                                            <Modal/>
-    </nav>
+
+                <Modal
+                    show={show}
+                    onHide={handleClose}
+                    >
+                    <Modal.Header closeButton>
+                        <Modal.Title>Edit a Sneaker Card</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        {shoeCard}
+                    </Modal.Body>
+                </Modal>                                  
+        </nav>
+    </div>
   )}

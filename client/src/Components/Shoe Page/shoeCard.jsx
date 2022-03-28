@@ -53,7 +53,16 @@ function ShoeCard({setFavorites, favorites, colorway, name, description, price, 
 
   function addShoesToList(){
     setFavorites([...favorites, newShoe])
+    console.log(`${favorites} added`)
 
+    fetch(`http://localhost:3000/likes/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: "",
+      })
+        .then((r) => r.json())
   }
   
   return (
@@ -118,11 +127,6 @@ function ShoeCard({setFavorites, favorites, colorway, name, description, price, 
           onSubmit={onSubmit}
           />
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer> */}
       </Modal>
     </>
   );

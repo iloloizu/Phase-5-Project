@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Form, Button, Alert, Row, Col } from 'react-bootstrap'
+import { Container, Form, Button, Alert, Row, Col } from 'react-bootstrap';
+import PlainShoe from '../ThreeJS Components/PlainShoe';
 
 function LoginForm({onLogin}) {
 
@@ -27,7 +28,8 @@ function LoginForm({onLogin}) {
     
     return (
         <Container>
-            <h1>Sneaker Vault</h1>
+            <h1 className="center">Space City Sneakers</h1>
+            {/* <PlainShoe/> */}
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
                     <Form.Label>Email Address</Form.Label>
