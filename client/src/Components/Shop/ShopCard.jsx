@@ -14,6 +14,7 @@ function ShopCard({image, name, colorway, link, description, price, id, brand, c
     let shopBrand = brand.brand
     
     const newShoe = {
+      key: {shopID},
       id: {shopID},
       colorway: {shopColorway},
       name: {shopName},
@@ -37,15 +38,17 @@ function ShopCard({image, name, colorway, link, description, price, id, brand, c
   //       }
   //     )
   // }
-
+    
     // setCartItem(newShoe)
-    console.log(cartItem[0].name.shopName)
+    // console.log(cartItem[0].name.shopName)
     
     function addShoesToCart(){
       // setCartItem("hi")
       setCartItem([...cartItem, newShoe])
       console.log(`${name.name} added`)
+      
       alert(`${name.name} added`)
+      console.log(cartItem)
   
       // fetch(`http://localhost:3000/likes/`, {
       //     method: "POST",

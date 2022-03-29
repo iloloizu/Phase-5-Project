@@ -1,10 +1,14 @@
 import React from 'react'
 
-function Cart({cartItem, setCartItem}) {
-  let cartName = cartItem[0].name.shopName
+
+function Cart({cartItem}) {
+  
+  console.log(cartItem)
 
   return (
-    <div>hello {cartName}</div>
+    <div>hello 
+      {/* {cartName} */}
+      </div>
   )
 }
 
