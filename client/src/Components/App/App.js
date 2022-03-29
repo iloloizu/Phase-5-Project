@@ -127,6 +127,8 @@ function App() {
               <Route exact path="/three" element={<Three/>} />
               <Route exact path="/" element={<Home/>} />
               <Route exact path="/cart" element={<Cart
+              cartItem={cartItem}
+              setCartItem={setCartItem}
               />} />
             </Routes>
         </div>

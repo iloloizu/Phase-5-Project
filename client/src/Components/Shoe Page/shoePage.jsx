@@ -8,7 +8,7 @@ import Category from "./Category";
 import AddShoe from './AddShoe';
 
 
-function ShoePage({setFavorites, favorites}) {
+function ShoePage({setFavorites, favorites, cartItem, setCartItem}) {
   const fetchFromStore = useSelector((state) => state.sneakers.entities)
 
   const allShoes = ['All', ...new Set(fetchFromStore.map(shoe => shoe.brand))];
@@ -41,6 +41,8 @@ function ShoePage({setFavorites, favorites}) {
     brand={shoe.brand}
     setFavorites={setFavorites}
     favorites={favorites}
+    cartItem={cartItem}
+    setCartItem={setCartItem}
     // fetchFromStore={fetchFromStore}
   /> )
 

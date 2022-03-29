@@ -2,15 +2,16 @@ import React from 'react';
 // import { useState, useEffect } from 'react';
 import { Card, Button} from 'react-bootstrap'
 
-function ShopCard(favorites, cartItem, setCartItem) {
-    let shopImage = favorites.image.image
-    let shopName = favorites.name.name
-    let shopColorway = favorites.colorway.colorway
-    let shopLink = favorites.link.link
-    let shopDescription = favorites.description.description
-    let shopPrice = favorites.price.price
-    let shopID = favorites.id.id
-    let shopBrand = favorites.brand.brand
+function ShopCard({image, name, colorway, link, description, price, id, brand, cartItem, setCartItem}) {
+  
+    let shopImage = image.image
+    let shopName = name.name
+    let shopColorway = colorway.colorway
+    let shopLink = link.link
+    let shopDescription = description.description
+    let shopPrice = price.price
+    let shopID = id.id
+    let shopBrand = brand.brand
     
     const newShoe = {
       id: {shopID},
@@ -23,30 +24,28 @@ function ShopCard(favorites, cartItem, setCartItem) {
       brand: {shopBrand},
     }
   
-    // function onSubmit(event) {
-    //   event.preventDefault();
-    //     dispatch(
-    //       createSneakers({
-    //         colorway: {colorway},
-    //         name: {name},
-    //         description: {description},
-    //         price: {price},
-    //         link: {link},
-    //         image: {image},
-    //         brand: {brand},
-    //       })
-    //     );
-    // }
+  //   function handlePost(obj){
+  //     fetch('/likes',{
+  //       method:'POST',
+  //       headers: {'Content-Type': 'application/json'},
+  //       body:JSON.stringify(obj)
+  //     })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       console.log(data)
+  //       setCartItem([...cartItem,data])
+  //       }
+  //     )
+  // }
 
-    console.log(newShoe)
-    console.log(cartItem)
-    setCartItem([...cartItem, newShoe])
-
+    // setCartItem(newShoe)
+    console.log(cartItem[0].name.shopName)
+    
     function addShoesToCart(){
       // setCartItem("hi")
-      console.log(cartItem)
-      // console.log(`${favorites.name.name} added`)
-      // alert(`${favorites.name.name} added`)
+      setCartItem([...cartItem, newShoe])
+      console.log(`${name.name} added`)
+      alert(`${name.name} added`)
   
       // fetch(`http://localhost:3000/likes/`, {
       //     method: "POST",
@@ -58,7 +57,7 @@ function ShopCard(favorites, cartItem, setCartItem) {
       //     .then((r) => r.json())
     }
 
-    console.log(shopName)
+    // console.log(shopName)
   return (
     <>
       <Card variant="dark" style={{ width: '25rem' }}>

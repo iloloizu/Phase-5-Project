@@ -64,20 +64,6 @@ function ShoeCard({cartItem, setCartItem, setFavorites, favorites, colorway, nam
     //     .then((r) => r.json())
   }
 
-  function addShoesToCart(){
-    setCartItem([...cartItem, newShoe])
-    console.log(`${name} added`)
-    console.log(cartItem)
-
-    // fetch(`http://localhost:3000/likes/`, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: "",
-    //   })
-    //     .then((r) => r.json())
-  }
   
   return (
     <>

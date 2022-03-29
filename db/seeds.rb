@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u1 = User.create(username: "ilolo", password: "1234", address: "123 Main Street, Sugar Land, TX", email: "iloloizu97@gmail.com", size: "11", color1: "#85C1E9" , color2: "#8E44AD", phone: "8176820158")
+u1 = User.create(username: "ilolo", password: "1234", address: "123 Main Street, Sugar Land, TX", email: "iloloizu97@gmail.com", size: "11", color1: "#85C1E9" , color2: "#8E44AD", phone: "8176820158", is_admin: true)
 
 s1 = Sneaker.create(brand: "Nike", name:"Nike Dunk Low", colorway: "Medium Curry", description: "Before cementing its status as a streetwear icon and skateboarding staple,
     the Dunk began its journey on the hardwood as Nike's first-team basketball shoe before cementing its status as a sportswear legend. This low-top 

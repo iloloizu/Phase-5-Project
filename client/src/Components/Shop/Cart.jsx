@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Cart() {
+function Cart({cartItem, setCartItem}) {
+  let cartName = cartItem[0].name.shopName
+
   return (
-    <div>Cart</div>
+    <div>hello {cartName}</div>
   )
 }
 

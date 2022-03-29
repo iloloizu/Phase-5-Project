@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {LinkContainer} from 'react-router-bootstrap'
 import {Navbar, Nav, Form, Container, Button, Modal} from 'react-bootstrap'
 import ShoeContainer from '../Shoe Page/ShoeContainer';
+import Cart from '../Shop/Cart';
 
 export default function NavBar({favorites, darkMode}) {
 
@@ -75,11 +76,12 @@ export default function NavBar({favorites, darkMode}) {
                     onHide={handleClose}
                     >
                     <Modal.Header closeButton>
-                        <Modal.Title>Edit a Sneaker Card</Modal.Title>
+                        <Modal.Title>Your Cart</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        {shoeCard}
+                        <Cart/>
                     </Modal.Body>
+                        <Button onClick={() => alert("pay me money")} variant="outline-success">Checkout</Button>
                 </Modal>                                  
         </nav>
     </div>
