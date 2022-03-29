@@ -14,7 +14,7 @@ function ShopCard({image, name, colorway, link, description, price, id, brand, c
     let shopBrand = brand.brand
     
     const newShoe = {
-      key: {shopID},
+      // key: {shopID},
       id: {shopID},
       colorway: {shopColorway},
       name: {shopName},
@@ -45,6 +45,8 @@ function ShopCard({image, name, colorway, link, description, price, id, brand, c
     function addShoesToCart(){
       // setCartItem("hi")
       setCartItem([...cartItem, newShoe])
+      // setCartItem(newShoe)
+
       console.log(`${name.name} added`)
       
       alert(`${name.name} added`)
@@ -60,7 +62,6 @@ function ShopCard({image, name, colorway, link, description, price, id, brand, c
       //     .then((r) => r.json())
     }
 
-    // console.log(shopName)
   return (
     <>
       <Card variant="dark" style={{ width: '25rem' }}>

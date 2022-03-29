@@ -4,7 +4,7 @@ import {Navbar, Nav, Form, Container, Button, Modal} from 'react-bootstrap'
 import ShoeContainer from '../Shoe Page/ShoeContainer';
 import Cart from '../Shop/Cart';
 
-export default function NavBar({favorites, darkMode}) {
+export default function NavBar({cartItem, setCartItem, favorites, darkMode}) {
 
     const [show, setShow] = useState(false);
 
@@ -79,7 +79,10 @@ export default function NavBar({favorites, darkMode}) {
                         <Modal.Title>Your Cart</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Cart/>
+                        <Cart 
+                        cartItem={cartItem}
+                        setCartItem={setCartItem}
+                        favorites={favorites}/>
                     </Modal.Body>
                         <Button onClick={() => alert("pay me money")} variant="outline-success">Checkout</Button>
                 </Modal>                                  

@@ -75,7 +75,7 @@ function App() {
     setIsClicked(isClicked => !isClicked);
   }
 
-  
+  console.log(cartItem)
   // favorites
 
 
@@ -107,6 +107,8 @@ function App() {
           isClicked={isClicked}
           darkMode={darkMode}
           favorites={favorites}
+          cartItem={cartItem}
+          setCartItem={setCartItem}
           />
             <Routes> 
               <Route exact path="/home" element={<Home/>} />
@@ -126,16 +128,20 @@ function App() {
               <Route exact path="/news" element={<NewsPage/>} />
               <Route exact path="/three" element={<Three/>} />
               <Route exact path="/" element={<Home/>} />
-              <Route exact path="/cart" element={<Cart
-              cartItem={cartItem}
-              setCartItem={setCartItem}
-              />} />
+              
+              
             </Routes>
         </div>
         </div>
         <canvas id="c"></canvas>
         <footer>
           <p className="center">©2022 Ilolo Izu</p>
+          <div className="invisible">
+          <Cart  
+          cartItem={cartItem}
+          setCartItem={setCartItem}
+          />
+          </div>
         </footer>
     </div>
 
