@@ -10,7 +10,7 @@ export default function NavBar({cartItem, setCartItem, favorites, darkMode}) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    
+
     const shoeCard = favorites.map((shoe) => 
         <ShoeContainer 
         key = {shoe.id}
