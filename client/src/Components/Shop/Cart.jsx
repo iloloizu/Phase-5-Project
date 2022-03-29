@@ -1,17 +1,26 @@
 import React from 'react'
+import {Card} from 'react-bootstrap';
 
 function Cart({cartItem, favorites}) {
   
   const shoppingItems = cartItem.map((cart)=> 
-  <ul>
-    <li>
-      <img alt={cart.name.shopName} src={cart.image.shopImage}/>
-      <p>{cart.name.shopName}</p>
-      <p>{cart.colorway.shopColorway}</p>
-      <p>{cart.price.shopPrice}</p>
-      
-    </li>
-  </ul>
+  <Card style={{ width: '18rem' }}>
+  <Card.Img variant="bottom" 
+  alt={cart.name.shopName} src={cart.image.shopImage}
+  />
+  <Card.Body>
+    <Card.Text>
+      <ul>
+        <li>
+          <p>{cart.name.shopName}</p>
+          <p>{cart.colorway.shopColorway}</p>
+          <p>{cart.price.shopPrice}</p>
+          
+        </li>
+      </ul>
+    </Card.Text>
+  </Card.Body>
+  </Card>
 )
 
   // const shoppingCart = cartItem.map((cart)=> 
