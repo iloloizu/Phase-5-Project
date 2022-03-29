@@ -74,8 +74,6 @@ function App() {
   function darkMode() {
     setIsClicked(isClicked => !isClicked);
   }
-
-  console.log(cartItem)
   // favorites
 
 

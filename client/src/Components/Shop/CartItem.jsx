@@ -1,8 +1,9 @@
 import React from 'react'
 
 function CartItem({cartItem}) {
+    console.log(cartItem[0].name.shopName)
   return (
-    <div>shoe</div>
+    <div>{cartItem[0].name.shopName}</div>
   )
 }
 
