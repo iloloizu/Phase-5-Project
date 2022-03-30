@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import {LinkContainer} from 'react-router-bootstrap'
-import {Navbar, Nav, Form, Container, Button, Modal} from 'react-bootstrap'
+import {Navbar, Nav, Form, Button, Modal} from 'react-bootstrap'
 import ShoeContainer from '../Shoe Page/ShoeContainer';
 import Cart from '../Shop/Cart';
 
-export default function NavBar({cartItem, setCartItem, favorites, darkMode}) {
+export default function NavBar({userData, cartItem, setCartItem, favorites, darkMode}) {
 
     const [show, setShow] = useState(false);
 
@@ -74,6 +74,7 @@ export default function NavBar({cartItem, setCartItem, favorites, darkMode}) {
                     </Modal.Header>
                     <Modal.Body>
                         <Cart 
+                        userData={userData}
                         cartItem={cartItem}
                         setCartItem={setCartItem}
                         favorites={favorites}/>

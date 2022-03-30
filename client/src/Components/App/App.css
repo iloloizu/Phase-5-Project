@@ -725,3 +725,13 @@ footer a {
   justify-content: center;
   text-align: center;
 }
+
+.div1 {
+  width: 30%;
+  float: left;
+}
+
+.div2 {
+  width: 70%;
+  float: left;
+}

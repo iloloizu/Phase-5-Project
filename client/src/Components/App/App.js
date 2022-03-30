@@ -108,6 +108,7 @@ function App() {
           favorites={favorites}
           cartItem={cartItem}
           setCartItem={setCartItem}
+          userData={userData}
           />
           
           <div className="main-container">
