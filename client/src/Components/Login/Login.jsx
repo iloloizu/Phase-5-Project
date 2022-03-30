@@ -2,11 +2,7 @@ import { useState } from "react";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 import ResetPasswordForm from './ResetPasswordForm';
-import {Container, Button, Figure, Row, Col} from 'react-bootstrap';
-
-import PlainShoe from "../ThreeJS Components/PlainShoe";
-
-const LoginImage = "https://wallpapercave.com/wp/wp4316804.jpg"
+import {Container, Button, Row, Col} from 'react-bootstrap';
 
 function Login({ onLogin }){
     const [showResetForm, setShowResetForm] = useState(false)
@@ -14,15 +10,10 @@ function Login({ onLogin }){
     
     return (        
         <div className="wallpaper">
-            <Figure>
-                {/* <Figure.Image width={600} alt="Sneaker Vault" src={LoginImage} /> */}
-                {/* <PlainShoe/> */}
-            </Figure>
+            
         <div className="glass">
         <Container className="mt-5">
             <Row className="justify-content-md-center">
-                
-            
                 <Col>
                     { showLogin ? (
                         <>

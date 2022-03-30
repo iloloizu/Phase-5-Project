@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Form, Button, InputGroup, FormLabel, Card } from 'react-bootstrap';
+import { Form, Button, InputGroup } from 'react-bootstrap';
 import { useDispatch } from "react-redux";
 import { updateSneakers } from '../../features/shoe';
 

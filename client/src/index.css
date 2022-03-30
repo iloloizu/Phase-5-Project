@@ -114,3 +114,9 @@
 .invisible {
   display: none;
 }
+
+.font-logo {
+  justify-content: center;
+  font-family: "Staatliches", cursive;
+  font-size: 4rem;
+}

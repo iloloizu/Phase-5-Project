@@ -8,9 +8,7 @@ import "./App.css"
 //components
 import Login from '../Login/Login.jsx';
 import NavBar from '../NavBar/NavBar.jsx';
-import { Container, Alert, Button } from 'react-bootstrap' 
 import { fetchSneakers } from "../../features/shoe";
-import Galaxy from "../ThreeJS Components/Galaxy";
 
 //Pages
 import Home from "../HomePage/Home.jsx";
@@ -19,7 +17,6 @@ import Shop from "../Shop/Shop.jsx"
 import ProfilePage from "../Profile Page/ProfilePage";
 import NewsPage from "../NewsPage/NewsPage";
 import Three from "../Three";
-import Holder from "../ThreeJS Components/Holder";
 import Cart from "../Shop/Cart";
 
 function App() {

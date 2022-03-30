@@ -8,9 +8,7 @@ import { deleteSneakers } from '../../features/shoe';
 import { useNavigate } from "react-router-dom";
 
 function ShoeCard({cartItem, setCartItem, setFavorites, favorites, colorway, name, description, price, link, image, brand, id}) {
-//   const sneakerData = useSelector((state) => [...state]);
 
-  // console.log(fetchFromStore)
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -42,6 +40,7 @@ function ShoeCard({cartItem, setCartItem, setFavorites, favorites, colorway, nam
           brand: {brand},
         })
       );
+      window.location.reload()
   }
 
   function deleteButton() {
@@ -83,7 +82,6 @@ function ShoeCard({cartItem, setCartItem, setFavorites, favorites, colorway, nam
             <br/>
             <br/>
           <Button onClick={addShoesToList}
-          //  variant="dark"
            >
              {"Add to Shop"} </Button>
             <br/>

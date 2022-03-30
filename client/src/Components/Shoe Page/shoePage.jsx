@@ -1,6 +1,6 @@
 import React, {useEffect,
-     useState
-    } from 'react';
+  useState
+ } from 'react';
 import { useDispatch, useSelector} from "react-redux";
 import ShoeCard from './shoeCard';
 import Category from "./Category";
@@ -41,7 +41,7 @@ function ShoePage({setFavorites, favorites, cartItem, setCartItem}) {
     favorites={favorites}
     cartItem={cartItem}
     setCartItem={setCartItem}
-    // fetchFromStore={fetchFromStore}
+    fetchFromStore={fetchFromStore}
   /> )
 
   return (

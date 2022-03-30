@@ -11,6 +11,9 @@ export default function NavBar({userData, cartItem, setCartItem, favorites, dark
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+
+    console.log(userData.is_admin)
+
     const shoeCard = favorites.map((shoe) => 
         <ShoeContainer 
         key = {shoe.id}
@@ -45,9 +48,12 @@ export default function NavBar({userData, cartItem, setCartItem, favorites, dark
                                     <LinkContainer to="/profile">
                                         <Nav.Link>Profile</Nav.Link>
                                     </LinkContainer>
-                                    <LinkContainer to="/shoes">
-                                        <Nav.Link>Warehouse</Nav.Link>
-                                    </LinkContainer>
+
+                                    {userData.is_admin == true ? (
+                                        <LinkContainer to="/shoes">
+                                            <Nav.Link>Warehouse</Nav.Link>
+                                        </LinkContainer> ) : console.log("nah")}
+                                    
                                 </Nav>
                                     
                                         <Navbar.Collapse className="justify-content-end">
