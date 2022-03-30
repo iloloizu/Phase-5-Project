@@ -42,17 +42,11 @@ export default function NavBar({cartItem, setCartItem, favorites, darkMode}) {
                                     <LinkContainer to="/news">
                                         <Nav.Link>News</Nav.Link>
                                     </LinkContainer>
-                                    <LinkContainer to="/home">
-                                        <Nav.Link>My Vault</Nav.Link>
-                                    </LinkContainer>
                                     <LinkContainer to="/profile">
                                         <Nav.Link>Profile</Nav.Link>
                                     </LinkContainer>
                                     <LinkContainer to="/shoes">
                                         <Nav.Link>Warehouse</Nav.Link>
-                                    </LinkContainer>
-                                    <LinkContainer to="/three">
-                                        <Nav.Link>Space Station</Nav.Link>
                                     </LinkContainer>
                                 </Nav>
                                     

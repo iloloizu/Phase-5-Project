@@ -20,7 +20,8 @@ function Shop({setFavorites, favorites, cartItem, setCartItem}) {
   /> )
 
   return (
-    <div>Shop
+    <div className="home">
+        <h1 className='sneaker-title'>Sneakers in Stock</h1>
         {storeFront}
     </div>
   )

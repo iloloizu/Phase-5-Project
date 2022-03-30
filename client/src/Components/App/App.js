@@ -96,9 +96,10 @@ function App() {
 
 
   return (
-    <div className="App" style={isClicked ? ( {backgroundColor: `#181818`, color: `${colorUser.color2}`}) : ({backgroundColor: `${colorUser.color1}`})} >
-      <div className=".container">
-        <div className="stars">
+    <div className="App" style={isClicked ? ( {backgroundColor: `#181818`}) : (
+      // {backgroundColor: `${colorUser.color1}`}
+      {backgroundImage: `linear-gradient(135deg, ${colorUser.color1}, ${colorUser.color2})`}
+      )}>
           <NavBar 
           user={user} 
           handleLogOutClick={handleLogOutClick}
@@ -108,32 +109,41 @@ function App() {
           cartItem={cartItem}
           setCartItem={setCartItem}
           />
-            <Routes> 
-              <Route exact path="/home" element={<Home/>} />
-              <Route exact path="/shoes" element={<ShoePage 
-              setFavorites={setFavorites}
-              favorites={favorites} 
-              cartItem={cartItem}
-              setCartItem={setCartItem}
-              />} />
-              <Route exact path="/shop" element={<Shop
-              setFavorites={setFavorites}
-              favorites={favorites}
-              cartItem={cartItem}
-              setCartItem={setCartItem}
-              />} />
-              <Route exact path="/profile" element={<Profile/>} />
-              <Route exact path="/news" element={<NewsPage/>} />
-              <Route exact path="/three" element={<Three/>} />
-              <Route exact path="/" element={<Home/>} />
-              
-              
-            </Routes>
-        </div>
-        </div>
-        <canvas id="c"></canvas>
-        <footer>
-          <p className="center">©2022 Ilolo Izu</p>
+          
+          <div className="main-container">
+          <Routes> 
+            <Route exact path="/home" element={<Home/>} />
+            <Route exact path="/shoes" element={<ShoePage 
+            setFavorites={setFavorites}
+            favorites={favorites} 
+            cartItem={cartItem}
+            setCartItem={setCartItem}
+            />} />
+            <Route exact path="/shop" element={<Shop
+            setFavorites={setFavorites}
+            favorites={favorites}
+            cartItem={cartItem}
+            setCartItem={setCartItem}
+            />} />
+            <Route exact path="/profile" element={<Profile/>} />
+            <Route exact path="/news" element={<NewsPage/>} />
+            <Route exact path="/three" element={<Three/>} />
+            <Route exact path="/" element={<Home/>} />
+          </Routes>
+          </div>
+          <div className="starfield">
+            <div id='stars'></div>
+          </div>
+          <div id='stars2'></div>
+          <div id='stars3'></div>
+          
+        
+
+        <footer style={isClicked ? ({backgroundImage: `linear-gradient(135deg, ${colorUser.color1}, ${colorUser.color2})`}) : (
+          // {backgroundColor: `${colorUser.color1}`}
+          {backgroundColor: `#181818`}
+          )} >
+          <p className="center">©2022 Ilolo Izu | <a href="https://iloloizu.netlify.app/">Projects and Portfolio</a> </p>
           <div className="invisible">
           <Cart  
           cartItem={cartItem}

@@ -2,11 +2,9 @@ import React, {useEffect,
      useState
     } from 'react';
 import { useDispatch, useSelector} from "react-redux";
-import { Container, Card, Button } from 'react-bootstrap'
 import ShoeCard from './shoeCard';
 import Category from "./Category";
 import AddShoe from './AddShoe';
-
 
 function ShoePage({setFavorites, favorites, cartItem, setCartItem}) {
   const fetchFromStore = useSelector((state) => state.sneakers.entities)
@@ -47,8 +45,8 @@ function ShoePage({setFavorites, favorites, cartItem, setCartItem}) {
   /> )
 
   return (
-    <>
-      <Container>
+    <div className ="shop-holder">
+      
        <Category filter={filter} category={category} />
         <div className='card-holder' >
           {shoeCards}
@@ -56,8 +54,8 @@ function ShoePage({setFavorites, favorites, cartItem, setCartItem}) {
           menuItems={menuItems}
           />
         </div>
-      </Container>
-    </>
+     
+    </div>
   )
 }
 

@@ -3,17 +3,19 @@ import React from 'react'
 import Profile from '../Profile Page/Profile'
 import Login from '../Profile Page/Login'
 import { Timeline } from 'react-twitter-widgets'
+import Three from "../Three"
 
 
 export default function Home() {
   return (
-    <div className="home">
+      <div className="home">
       <Profile/>
-      <Login/>
+      <Three/>
       <Timeline
         dataSource={{ sourceType: "profile", screenName: "SneakerNews" }}
-        options={{ theme: "dark", width: "400", height: "600" }}
+        options={{ theme: "dark", width: "400", height: "800" }}
       />
       </div>
+    
   )
 }

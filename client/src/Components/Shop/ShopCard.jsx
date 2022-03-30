@@ -63,7 +63,7 @@ function ShopCard({image, name, colorway, link, description, price, id, brand, c
     }
 
   return (
-    <>
+    
       <Card variant="dark" style={{ width: '25rem' }}>
         <Card.Img variant="left" src={shopImage} alt={shopName} />
         <Card.Body>
@@ -80,10 +80,8 @@ function ShopCard({image, name, colorway, link, description, price, id, brand, c
             <br/>
             <br/>
         </Card.Body>
-      </Card>
-
-    
-    </>
+      </Card>    
+  
   )
 }
 

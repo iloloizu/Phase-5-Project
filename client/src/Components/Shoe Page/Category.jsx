@@ -6,7 +6,7 @@ function Category({filter, category}) {
         <div className="buttons">
             {
                 category.map((cat, i)=>{
-                    return <Button variant="dark" type="button" className="btn-port" onClick={()=> filter(cat)} key={i}>{cat}</Button>
+                    return <><Button variant="outline-light" type="button" className="btn-port" onClick={()=> filter(cat)} key={i}>{cat}</Button><br/></>
                 })
             }
         </div>
