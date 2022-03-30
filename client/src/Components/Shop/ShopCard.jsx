@@ -4,40 +4,26 @@ import { Card, Button} from 'react-bootstrap'
 
 function ShopCard({image, name, colorway, link, description, price, id, brand, cartItem, setCartItem}) {
   
-    let shopImage = image.image
-    let shopName = name.name
-    let shopColorway = colorway.colorway
-    let shopLink = link.link
-    let shopDescription = description.description
-    let shopPrice = price.price
-    let shopID = id.id
-    let shopBrand = brand.brand
+    let shopImage = image
+    let shopName = name
+    let shopColorway = colorway
+    let shopLink = link
+    let shopDescription = description
+    let shopPrice = price
+    let shopID = id
+    let shopBrand = brand
     
     const newShoe = {
       // key: {shopID},
-      id: {shopID},
-      colorway: {shopColorway},
-      name: {shopName},
-      description: {shopDescription},
-      price: {shopPrice},
-      link: {shopLink},
-      image: {shopImage},
-      brand: {shopBrand},
+      id: shopID,
+      colorway: shopColorway,
+      name: shopName,
+      description: shopDescription,
+      price: shopPrice,
+      link: shopLink,
+      image: shopImage,
+      brand: shopBrand,
     }
-  
-  //   function handlePost(obj){
-  //     fetch('/likes',{
-  //       method:'POST',
-  //       headers: {'Content-Type': 'application/json'},
-  //       body:JSON.stringify(obj)
-  //     })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data)
-  //       setCartItem([...cartItem,data])
-  //       }
-  //     )
-  // }
     
     // setCartItem(newShoe)
     // console.log(cartItem[0].name.shopName)
@@ -52,14 +38,6 @@ function ShopCard({image, name, colorway, link, description, price, id, brand, c
       alert(`${name.name} added`)
       console.log(cartItem)
   
-      // fetch(`http://localhost:3000/likes/`, {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: "",
-      //   })
-      //     .then((r) => r.json())
     }
 
   return (

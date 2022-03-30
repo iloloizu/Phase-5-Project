@@ -1,0 +1,2 @@
+class StoreSneaker < ApplicationRecord
+end

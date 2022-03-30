@@ -53,3 +53,10 @@ s4 = Sneaker.create(brand: "adidas", name:"adidas Yeezy Boost 750", colorway: "L
 s4 = Sneaker.create(brand: "adidas", name:"adidas Yeezy Boost 350 V2", colorway: "Dazzling Blue", description: "The adidas Yeezy 350 V2 Dazzling Blue is reminiscent of the 2016 Yeezy 350 V2 Black Friday Pack. Instead of featuring a marbled pattern and sheer side stripe, it opts for a solid black Primeknit upper and blue side stripe with 'SPLY-350' text. At the base, a muted Boost sole offers comfort and support.", 
     price: 311, image:"https://sneakernews.com/wp-content/uploads/2021/12/adidas-YEEZY-BOOST-350-V2-DAZZLING-BLUE-0.jpg",
     link: "https://stockx.com/adidas-yeezy-boost-350-v2-dazzling-blue?country=US&currencyCode=USD&size=11&g_network=g&g_productchannel=online&g_adid=244607812448&g_campaign=OD+-+Segment+-+Sneakers+-+Adult+Sizes+-+%28US%29&g_keyword=&g_adtype=pla&g_keywordid=pla-424142573907&g_acctid=709-098-4271&g_ifcreative=&gclsrc=aw.ds&g_adgroupid=50672857117&g_productid=72765a16-0229-4e24-8c77-3abda54750f2&g_merchantid=111829866&g_partition=424142573907&g_campaignid=1032998786&g_ifproduct=product&&gclsrc=aw.ds&&utm_source=google&utm_medium=cpc&utm_campaign=OD-Segment-Sneakers-AdultSizes-(US)&utm_campaignid=1032998786&content=244607812448&keyword&gclid=CjwKCAjwxOCRBhA8EiwA0X8hi4SAlGmbdAhK0QoODePRCwFhHVRFjCIRIJFXWRk4FeIqxZp05HdPfBoCu8oQAvD_BwE" )
+
+
+ss1 = StoreSneaker.create(brand: "Nike", name:"Nike Dunk Low", colorway: "Medium Curry", description: "Before cementing its status as a streetwear icon and skateboarding staple,
+    the Dunk began its journey on the hardwood as Nike's first-team basketball shoe before cementing its status as a sportswear legend. This low-top 
+    edition of the timeless silhouette features neutral hues of sail and fossil with spicy hits of medium curry.", 
+    price: 110, image:"https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/6c13023d-1771-4db5-b651-9c1798185268/dunk-low-medium-curry-release-date.jpg",
+    link: "https://www.nike.com/launch/t/dunk-low-medium-curry" )

@@ -11,6 +11,8 @@ function ShoeCard({cartItem, setCartItem, setFavorites, favorites, colorway, nam
 
   const [show, setShow] = useState(false);
 
+  const [storeSneaker, setStoreSneaker] = useState([]);
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -48,21 +50,42 @@ function ShoeCard({cartItem, setCartItem, setFavorites, favorites, colorway, nam
     window.location.reload()
   }
 
-  function addShoesToList(){
+  function addShoesToList(obj){
     setFavorites([...favorites, newShoe])
-    console.log(`${name} added`)
-    console.log(favorites)
+    alert(`${name} added`)
+    // console.log(favorites)
 
-    // fetch(`http://localhost:3000/likes/`, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: "",
-    //   })
-    //     .then((r) => r.json())
+    fetch(`/store_sneakers`, {
+        method:'POST',
+        headers: {'Content-Type': 'application/json'},
+        body:JSON.stringify(obj)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+          // window.location.reload();
+        }
+      )
   }
+  
+  function handleSubmit(e){
+    e.preventDefault();
 
+    const newerShoe = {
+      key: id,
+      id: id,
+      colorway: colorway,
+      name: name,
+      description: description,
+      price: price,
+      link: link,
+      image: image,
+      brand: brand,
+    }
+
+    addShoesToList(newerShoe)
+    // alert("Added to Your Storefront")
+  }
   
   return (
     <>
@@ -81,7 +104,7 @@ function ShoeCard({cartItem, setCartItem, setFavorites, favorites, colorway, nam
              {"Add to Cart"} </Button>
             <br/>
             <br/>
-          <Button onClick={addShoesToList}
+          <Button onClick={handleSubmit}
            >
              {"Add to Shop"} </Button>
             <br/>
