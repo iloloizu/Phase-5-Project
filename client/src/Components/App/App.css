@@ -694,21 +694,31 @@ footer a {
 }
 
 #div1 {
-  width: 70%;
-  float: right;
-  justify-content: center;
-  text-align: center;
-}
-
-#div2 {
-  width: 30%;
+  width: 60%;
   float: left;
 }
 
+#div2 {
+  width: 20%;
+  float: left;
+}
+
+#div3 {
+  width: 20%;
+  height: 800px;
+  float: right;
+  /* justify-content: center;
+  text-align: center; */
+  background-image: url("https://i.pinimg.com/736x/be/b2/a6/beb2a67ed1e08dca8da17b818bae06ce.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+}
+
 .organize {
-  width: 80%;
-  justify-content: center;
-  text-align: center;
+  /* width: 80%; */
+  /* justify-content: center;
+  text-align: center; */
 }
 
 .center-h {
