@@ -46,7 +46,8 @@ function ShoePage({setFavorites, favorites, cartItem, setCartItem}) {
 
   return (
     <div className ="shop-holder">
-      
+      <h1 className="sneaker-title">Manage your Inventory</h1>
+      <h3 className="sneaker-subtitle">Add, Organize, Sort, Delete, and Manage all of the shoes in your Vault.</h3> 
        <Category filter={filter} category={category} />
         <div className='card-holder' >
           {shoeCards}

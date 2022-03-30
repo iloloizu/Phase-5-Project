@@ -22,7 +22,9 @@ function Shop({setFavorites, favorites, cartItem, setCartItem}) {
   return (
     <div className="home">
         <h1 className='sneaker-title'>Sneakers in Stock</h1>
+        <div className='card-holder'>
         {storeFront}
+        </div>
     </div>
   )
 }

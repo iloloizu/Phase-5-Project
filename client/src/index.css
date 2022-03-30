@@ -28,7 +28,6 @@
   flex-basis: 0;
   float: center;
   margin: 0 2.5rem;
-  box-shadow: 0 35px 20px -30px rgba(0, 0, 0, 0.1);
   border-radius: 1.2rem;
   display: flex;
   align-content: flex-start;
@@ -57,7 +56,8 @@
 }
 
 .padding-right {
-  padding-right: 20px;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
 .behind {
@@ -74,29 +74,28 @@
 
 .glass {
   color: white;
+  margin-top: 7rem;
   position: relative;
-  background: inherit;
-  overflow: hidden;
-  width: 70%;
+  background-image: linear-gradient(135deg, #47405c54, #0a051c8c);
+  width: fit-content;
   height: 70%;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   z-index: 1;
+  overflow: auto;
 }
 
-.glass:before {
+/* .glass:before {
   content: "";
   position: absolute;
-  background: inherit;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: -20px;
-
-  filter: blur(10px);
+  filter: blur(100px);
   z-index: -1;
-}
+} */
 
 .wallpaper {
   background-image: url("https://wallpaperaccess.com/full/1247375.jpg");

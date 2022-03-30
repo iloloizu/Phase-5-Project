@@ -31,7 +31,7 @@ export default function NavBar({cartItem, setCartItem, favorites, darkMode}) {
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="div_top_hypers">
                     <Navbar bg="dark" expand="lg">
                         <LinkContainer to="/home">
-                            <Navbar.Brand>Space City Sneakers</Navbar.Brand>
+                            <Navbar.Brand className="font">Space City Sneakers</Navbar.Brand>
                         </LinkContainer>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">

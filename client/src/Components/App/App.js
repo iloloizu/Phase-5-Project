@@ -16,7 +16,7 @@ import Galaxy from "../ThreeJS Components/Galaxy";
 import Home from "../HomePage/Home.jsx";
 import ShoePage from "../Shoe Page/shoePage";
 import Shop from "../Shop/Shop.jsx"
-import Profile from "../Profile Page/Profile";
+import ProfilePage from "../Profile Page/ProfilePage";
 import NewsPage from "../NewsPage/NewsPage";
 import Three from "../Three";
 import Holder from "../ThreeJS Components/Holder";
@@ -125,7 +125,7 @@ function App() {
             cartItem={cartItem}
             setCartItem={setCartItem}
             />} />
-            <Route exact path="/profile" element={<Profile/>} />
+            <Route exact path="/profile" element={<ProfilePage/>} />
             <Route exact path="/news" element={<NewsPage/>} />
             <Route exact path="/three" element={<Three/>} />
             <Route exact path="/" element={<Home/>} />

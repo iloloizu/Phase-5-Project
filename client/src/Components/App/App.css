@@ -1,6 +1,7 @@
 .App {
   background-color: black;
   overflow: hidden;
+  font-family: "Roboto", sans-serif;
 }
 
 .dark {
@@ -36,14 +37,15 @@
 
 .profile {
   color: #fbfff7;
-  background-color: #8e44ad;
+  background-image: linear-gradient(135deg, #54545441, #171717b1);
   border-radius: 20px;
-  width: fit-content;
-  height: fit-content;
+  width: 85%;
+  height: 85%;
   padding: 15px;
   text-align: center;
   display: inline-block;
-  margin: 10px;
+  margin: 50px;
+  z-index: 10;
 }
 
 .home {
@@ -71,6 +73,15 @@
 .sneaker-title {
   color: white;
   text-align: center;
+  font-family: "Staatliches", cursive;
+  font-size: 4rem;
+}
+
+.sneaker-subtitle {
+  color: white;
+  text-align: center;
+  font-family: "Staatliches", cursive;
+  font-size: 2rem;
 }
 
 .form-card {
@@ -675,3 +686,15 @@ footer a {
     transform: translateY(-2000px);
   }
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&family=Staatliches&display=swap");
+
+.font {
+  font-family: "Staatliches", cursive;
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+/* html {
+  font-family: "Roboto", sans-serif;
+} */
