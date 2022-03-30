@@ -33,9 +33,9 @@ function ShopCard({image, name, colorway, link, description, price, id, brand, c
       setCartItem([...cartItem, newShoe])
       // setCartItem(newShoe)
 
-      console.log(`${name.name} added`)
+      console.log(`${name} added`)
       
-      alert(`${name.name} added`)
+      alert(`${name} added`)
       console.log(cartItem)
   
     }
