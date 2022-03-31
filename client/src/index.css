@@ -85,18 +85,6 @@
   overflow: auto;
 }
 
-/* .glass:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: -20px;
-  filter: blur(100px);
-  z-index: -1;
-} */
-
 .wallpaper {
   background-image: url("https://assets.bwbx.io/images/users/iqjWHBFdfxIU/izlpWGYya_Vg/v0/-1x-1.jpg");
   background-repeat: no-repeat;
